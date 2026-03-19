@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Implementing Green Cloud Systems: A Practical Guide to Change | Clusters and Climate</title>
+
+<meta name="description" content="A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while improving developer experience.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="https://clustersandclimate.com/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://clustersandclimate.com/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://clustersandclimate.com/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://clustersandclimate.com/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://clustersandclimate.com/favicon-64.png"> 
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W43KWS3B37');
+        }
+      </script><meta property="og:type" content="article">
+<meta property="og:title" content="Implementing Green Cloud Systems: A Practical Guide to Change">
+<meta property="og:description" content="A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while improving developer experience.">
+<meta property="og:url" content="https://clustersandclimate.com/technology/implementing-green-cloud-systems/">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/green-cloud.png"><meta property="og:image:alt" content="Implementing Green Cloud Systems: A Practical Guide to Change"><meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Implementing Green Cloud Systems: A Practical Guide to Change">
+<meta name="twitter:description" content="A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while …"><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/green-cloud.png"><meta name="twitter:image:alt" content="Implementing Green Cloud Systems: A Practical Guide to Change"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full p-1.5">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-spin bi bi-egg-fried fill-white" viewBox="0 0 16 16">
+						<path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+						<path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"></path>
+					</svg>
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://clustersandclimate.com/">Clusters and Climate</a></h2>
+			</div>		<div class="flex items-center flex-wrap mx-2" style="gap: 6px;"><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/climate/">
+						Climate
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/diary/">
+						Diary
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/life/">
+						Life
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/outdoor/">
+						Outdoor
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/science/">
+						Science
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/technology/">
+						Technology
+					</a></div>		</div>
+		<div class="flex items-center ml-auto">
+			<button class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/about/">About</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/categories/">Categories</a>
+    </li>
+    </ul>
+  </nav>
+<div id="search-bar" class="block mt-3 close">
+	<form id="search" class="flex items-stretch">
+		<input class="w-full block px-6 py-2 rounded-l-full focus:outline-none border border-zinc-200" type="text" placeholder="Search...">
+		<button class="flex items-center px-7 py-2.5 rounded-r-full border border-zinc-200 ">
+			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-pulse" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+			</svg>
+		</button>
+	</form>
+</div>
+</div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://clustersandclimate.com/">Clusters and Climate</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://clustersandclimate.com/technology/">Technologies</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">Implementing Green Cloud Systems: A Practical Guide to Change</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold">A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while improving developer experience. </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://clustersandclimate.com/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar avatar" width="734" height="734">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">Dr. Vivek Shilimkar</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2026-03-19T00:00:00&#43;00:00">March 19, 2026</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            8 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+    <figure id="featureimage" class="rounded-xl aspect-video">
+
+    </figure>
+
+    <div id="content" class="mb-14">
+      <p>I will be honest about something uncomfortable before diving into infrastructure patterns.</p>
+<p>As I write this, multiple active conflicts around the world are releasing carbon and doing pollution at a scale that makes any discussion of saving the climate/environment feel almost irrelevant. A sustained military operations can emits more carbon dioxide in a single week than all the data centers combined in a year. Environmental and climate damages by Wars takes decades to recover and Advocating for green cloud systems in that context can feel naive, or even morally hollow.</p>
+<p>I&rsquo;m writing this article with that discomfort. I don&rsquo;t think it will go away entirely, and I&rsquo;m not sure it should.</p>
+<p>Tackling climate change isn’t about taking one big step that suddenly fixes everything. Instead, it’s more like taking hundreds of smaller steps at the same time — energy, transportation, agriculture, technology, policy, and everyday choices. Each action on its own might seem small, but together they add up and create real progress toward a healthier environment. We should not skip the ones we can control just because others are being pulled in the wrong direction. In the context of Green Cloud Systems, the emissions from non-production cloud infrastructure are real, measurable, and avoidable — not through protest or policy, but through engineering decisions that are within our reach today.</p>
+<p>This guide doesn&rsquo;t promise to stop a war or fix geopolitics to reduce carbon emmission. But, it show how to reduce the part of the carbon footprint that a software team can actually influence. That&rsquo;s not nothing. And if enough teams make it standard practice, the numbers add up to something real.</p>
+<hr>
+<p>In a previous article, I explored how development and test clusters accumulate energy use by running 24/7 despite being actively used less than 25% of the time. The quiet, continuous operation of non-production infrastructure creates an invisible but significant carbon footprint - equivalent to average 25–45 Indian homes annually for a mid-sized engineering organization.</p>
+<p>Moving to energy-efficient cloud infrastructure is overwhelming. Teams worry about disrupting workflows, breaking existing processes, and faces developer resistance. The concerns are legitimate - without proper plan, poor implimentation can frustrate developers and slow down delivery. But the transformation doesn&rsquo;t require a complete overhaul or accepting reduced productivity. By addressing changes incrementally  organizations can dramatically reduce their environmental impact while often improving developer experience.</p>
+<p>This is a practical guide to making that change happen.</p>
+<h2 id="the-foundation-understanding-your-baseline">The Foundation: Understanding Your Baseline</h2>
+<p>Before making changes, you need to understand what you&rsquo;re changing. In this process organizations discover that they don&rsquo;t actually know whether their non-production infrastructure is being used - or not used.</p>
+<p>The measurement phase is the foundation that makes everything else possible. Without baseline data, you can&rsquo;t:</p>
+<ul>
+<li>Identify which environments are actually idle and and over provisioned</li>
+<li>Make informed decisions about how to optimize those environments</li>
+<li>Prove the impact of your changes in terms of cost save and carbon emmissions.</li>
+<li>Justify the effort to stakeholders</li>
+</ul>
+<p>Start by answering these questions:</p>
+<ul>
+<li>How many non-production environments exist? (Many organizations are surprised by the answer)</li>
+<li>What are their actual utilization patterns? (Not what you think they are, but what monitoring shows)</li>
+<li>What do they cost monthly? (Both in dollars and estimated kWh)</li>
+<li>When are they truly needed vs. when are they just running?</li>
+</ul>
+<p>Tools like Kubernetes metrics-server, cloud provider monitoring (CloudWatch, Azure Monitor, Stackdriver), and cost management platforms (Kubecost, OpenCost) can provide this visibility. Set up dashboards that show idle time, resource utilization, and cost per environment.</p>
+<p>This measurement phase typically takes couple of weeks. The data often reveals patterns that justify the entire initiative.</p>
+<h2 id="implementation-without-disruption">Implementation Without Disruption</h2>
+<p>Change doesn&rsquo;t have to be disruptive. Start small:</p>
+<p><strong>Week 1-2: Measure</strong> - Tag all non-production resources. Instrument utilization monitoring. Survey teams on actual usage patterns. Calculate baseline energy and cost.</p>
+<p><strong>Week 3-4: Quick Wins</strong> - Implement weekend shutdowns (when utilization is lowest). Right-size obviously over-provisioned resources. Identify and eliminate abandoned environments.</p>
+<p><strong>Month 2: Automated Scheduling</strong> - Deploy automated shutdown/startup for dev environments. Provide self-service controls for developers to override policies as needed. Collect feedback and adjust schedules.</p>
+<p><strong>Month 3+: Longer-term Changes</strong> - Transitioning to ephemeral environments for appropriate workloads. Implement auto-cleanup policies. Optimize environment provisioning to reduce startup friction.</p>
+<h2 id="the-challenges-of-change">The Challenges of Change</h2>
+<p>This is not without trade-offs:</p>
+<p><strong>Startup time</strong> - Environments may take 5-15 minutes to become operational. Solutions include pre-warming critical services, using database snapshots, and optimizing container registries.</p>
+<p><strong>Developer experience</strong> - Poorly implemented automation frustrates developers. Solutions include clear schedules, easy override mechanisms, fully automated startup, and responsive support.</p>
+<p><strong>State management</strong> - Some workflows need persistent state. That can be achieved with persistent volumes that outlive compute resources and snapshot/restore automation.</p>
+<p>These are solvable problems, not fundamental barriers.</p>
+<p>The key insight is that most developer friction comes from poor implementation, not from the concept itself. When environments start up automatically before developers arrive, when overrides are easy and reliable, and when the system works transparently, most developers don&rsquo;t even notice the change - except for faster provisioning and cleaner state.</p>
+<h2 id="real-impact">Real Impact</h2>
+<p>Organizations that have implemented these patterns report significant reductions.
+Study conducted in Pune region show that techniques such as virtualization, dynamic resource allocation, and energy-aware scheduling can reduce energy consumption. (<a href="https://doi.org/10.46610/IJMCSE.2025.v01i02.002">Deshmukh et. al. 2025</a>)</p>
+<ul>
+<li>54-70% reduction in energy consumption</li>
+<li>Corresponding ~18–29 tons/month reduction in carbon emissions.</li>
+</ul>
+<p>Often improved developer experience ephemeral environments are often faster and cleaner. Faster feedback loops when spinning up is automated, it&rsquo;s less painful.</p>
+<p>The pattern can repeat across industries. Financial services firms, e-commerce platforms, and enterprise software companies etc.</p>
+<h2 id="building-support-and-managing-resistance">Building Support and Managing Resistance</h2>
+<p>Technical implementation is only half the challenge. Cultural adoption matters just as much.</p>
+<ol>
+<li><strong>Engage developers early</strong> - Don&rsquo;t present this as a cost-cutting strategy. Spend 1-2 weeks understanding baseline usage.</li>
+<li><strong>Pick one team or environment</strong> - Prove the approach works before scaling. A successful pilot overcomes skepticism.</li>
+<li><strong>Listen to developers</strong> - They&rsquo;ll tell you what breaks and what works. Developer feedback is your most valuable signal.</li>
+<li><strong>Iterate quickly</strong> - Fix issues as they arise, don&rsquo;t wait for perfect. Speed of response matters more than initial completeness.</li>
+<li><strong>Automate thoroughly</strong> - Manual processes fail. Automated shutdown, startup, and health checks should be reliable by default.</li>
+<li><strong>Celebrate wins</strong> - Share cost savings and energy reductions. Make impact visible to the organization.</li>
+</ol>
+<p>The environmental benefits are substantial, but they&rsquo;re also paired with operational benefits: lower costs, cleaner environments, and often faster development cycles. This isn&rsquo;t about sacrifice - it&rsquo;s about working smarter.</p>
+<h2 id="looking-forward">Looking Forward</h2>
+<p>The patterns described here are highly researched (<a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118305393.ch16">S KUmar et. al. 2012</a>, <a href="https://ieeexplore.ieee.org/abstract/document/7155006/">YS Patel et. al. 2015</a>, <a href="https://www.researchgate.net/profile/Pavani-Surarapu/publication/379073876_Toward_Green_Clouds_Sustainable_Practices_and_Energy-Efficient_Solutions_in_Cloud_Computing/links/65f99515f3b56b5b2d14cd30/Toward-Green-Clouds-Sustainable-Practices-and-Energy-Efficient-Solutions-in-Cloud-Computing.pdf">R Mahadasa et. al. 2016</a>, <a href="https://www.mdpi.com/2073-8994/9/12/295">LD Radu 2017</a>, <a href="https://doi.org/10.46610/IJMCSE.2025.v01i02.002">Deshmukh et. al. 2025</a>), proven and practical. Organizations around the world have started planning the implementation. The technology exists. The environmental impact is measurable and significant.</p>
+<p>What&rsquo;s needed is not new innovation, but consistent implimentation of what works.</p>
+<p>As cloud infrastructure continues to grow, with more microservices, more environments, and more complexity - the baseline energy consumption of non-production infrastructures will grow with it unless we actively design for efficiency. The defaults matter. If &ldquo;always-on&rdquo; remains the default, waste accumulates quietly across thousands of organizations. But if &ldquo;on-demand&rdquo; becomes the default and if the provisioning is fast enough, the continuous availability isn&rsquo;t necessary and there won&rsquo;t as much waste accumulation.</p>
+<p>The question is not whether individual organizations can reduce their non-production energy consumption by 50-70%. They can, and many might have. The question is whether this becomes standard practice across the industry, or remains an exception pursued by particularly motivated teams.</p>
+<p>Shutting down the every development cluster when not needed, running the test environment only during test runs, and scaling down the staging system between releases - are small decisions that accumulate into meaningful impact.</p>
+<p>The transformation from identifying the problem to implementing solutions is achievable. It requires measurement, planning, incremental change, and attention to developer experience. But it doesn&rsquo;t require heroic effort or accepting reduced productivity.</p>
+<p>Start with one environment. Measure the impact. Learn what works. Scale from there.</p>
+<p>The climate benefits from reduced energy consumption. Your organization benefits from lower costs. Your developers often benefit from cleaner, faster environments.</p>
+<h2 id="technical-patterns-that-work">Technical Patterns That Work</h2>
+<p>Beyond basic scheduling, several architectural patterns make green cloud systems more practical:</p>
+<p><strong>Health-check based startup</strong> - Don&rsquo;t just start services. Verify they&rsquo;re healthy before marking environments as ready. This prevents developers from hitting partially-initialized systems.</p>
+<p><strong>Dependency ordering</strong> - Start databases before application services. Start message queues before consumers. Use tools like Kubernetes init containers or startup dependencies to encode this logic.</p>
+<p><strong>Pre-warming</strong> - Schedule startup 30 minutes before typical working hours. Developers arrive to ready environments.</p>
+<p><strong>Snapshot-based state</strong> - For environments that need persistent state, use database snapshots, persistent volumes, or S3-backed storage that outlives compute resources.</p>
+<p><strong>Fast provisioning</strong> - Optimize container images, use image caching, and leverage instance snapshots to reduce startup time. The faster environments spin up, the less developers notice the change.</p>
+<p><strong>Self-service extension</strong> - Provide simple commands like <code>extend-dev-env 4h</code> that push shutdown time further without requiring admin intervention.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>The key to successful implementation is incremental progress with continuous feedback:</p>
+<ol>
+<li><strong>Start with visibility</strong> - You can&rsquo;t optimize what you don&rsquo;t measure</li>
+<li><strong>Pick one team or environment</strong> - Prove the approach works before scaling</li>
+<li><strong>Listen to developers</strong> - They&rsquo;ll tell you what breaks and what works</li>
+<li><strong>Iterate quickly</strong> - Fix issues as they arise, don&rsquo;t wait for perfect</li>
+<li><strong>Celebrate wins</strong> - Share cost savings and energy reductions</li>
+</ol>
+<p>The environmental benefits are real, and they pair with operational benefits: lower costs, cleaner environments, and often faster development cycles. Will this alone reverse climate change? No. But it reduces the emissions that are ours to reduce. In a world where much of the damage is being done by forces outside our control, that is still worth doing.</p>
+<p>Start with what you can change. Measure it. Share it. Scale it.</p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Greencloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Greencloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Sustainability/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Sustainability</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Kubernetes/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Kubernetes</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Cloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Cloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Energy-Efficiency/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Energy-Efficiency</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Devops/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Devops</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Implementation/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Implementation</a></li>
+    </ul>
+</div>
+
+    <footer id="content-footer" class="not-prose">
+
+      <div id="comment" class="border p-8 bg-zinc-100 rounded-2xl">
+
+        <h2 class="text-xl font-semibold mb-4">Comments</h2>
+
+        <script src="https://giscus.app/client.js"
+                data-repo="vivek-shilimkar/clusters-and-climate"
+                data-repo-id="R_kgDONhx8ng"
+                data-category="General"
+                data-category-id="DIC_kwDONhx8ns4Clb8B"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+      </div>
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar">
+
+        <h2 class="text-xl font-bold my-4">Written by : Dr. Vivek Shilimkar</h2>
+
+        <p class="mb-4">Cloud Engineer | Climate Scientist | Green Cloud Advocate | Nature Enthusiast | Science Communicator</p>
+
+        <ul class="flex flex-wrap space-x-4">
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg>
+              <span class="ml-2">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>
+              <span class="ml-2">Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+
+              </svg>
+              <span class="ml-2">Instagram</span>
+            </a>
+          </li>
+
+        </ul>
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://clustersandclimate.com/technology/quiet-always-on-dev-test-clusters-energy/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/quiet-home_hu_a1811995a544ba9.png" alt="Quiet, Always-On: How Development and Test Clusters Accumulate Energy Use" width="750" height="498">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-02-12T00:00:00&#43;00:00">Feb 12, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">Quiet, Always-On: How Development and Test Clusters Accumulate Energy Use</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">Development and test environments often run 24/7 despite being used only during business hours. This article explores the hidden energy costs of always-on infrastructure and practical strategies to reduce the carbon footprint of non-production workloads.</p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://clustersandclimate.com/technology/from-climate-science-to-virtual-cloud-systems/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/heading_hu_727ab9a75ec8f317.png" alt="From Climate Science to Virtual Cloud Systems : Designing Green Cloud Systems" width="750" height="500">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-02-05T17:32:37&#43;00:00">Feb 05, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">From Climate Science to Virtual Cloud Systems : Designing Green Cloud Systems</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">A climate scientist’s perspective on why Green Cloud is not about offsets or slogans, but about how we design, size, and run cloud systems — and why engineering honesty matters before optimization.</p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8"><div class="space-y-6"></div>
+
+		<div class="mt-8 space-y-4">
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-dcad58da-bc3d-4fbe-b282-b1826d9fac43" data-elfsight-app-lazy></div></div></div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://clustersandclimate.com/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="mr-2 group-hover:animate-spin" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
+        </svg>
+        
+        <span class="text-2xl font-semibold uppercase">Clusters and Climate</span>
+      </a>
+
+      <p class="font-semibold">
+        When not debugging clusters or decoding currents, I wander the wild.
+      </p>
+
+      <p>👋 Hi, I'm Dr. Vivek Shilimkar. I’m a climate scientist by education and a Site Reliability Engineer by profession at Improving, where I work with Kubernetes, Rancher, and cloud-native infrastructure. I write about everything from virtual clouds to the real ones in the sky. When I’m not studying ocean currents or optimizing compute clusters, I’m usually hiking remote trails, camping by lakes, or stargazing under wide open skies.</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/about/">About</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/categories/">Categories</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2026. All rights reserved. <a href="https://insertapps.com/en/" target="_blank" rel="noopener">Insertapps.com</a></p>
+
+  </div>
+  
+</div>
+</footer><script src="/js/insertoggle.js"></script>
+</body>
+</html>
