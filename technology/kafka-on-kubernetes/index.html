@@ -18,12 +18,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://clustersandclimate.com/favicon-32.png"> 
 <link rel="icon" type="image/png" sizes="64x64" href="https://clustersandclimate.com/favicon-64.png"> 
 
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -33,18 +31,14 @@
           gtag('js', new Date());
           gtag('config', 'G-W43KWS3B37');
         }
-      </script>
-    
-  
-
-<meta property="og:type" content="article">
+      </script><meta property="og:type" content="article">
 <meta property="og:title" content="How to Set Up Kafka on Kubernetes">
 <meta property="og:description" content="A step-by-step guide to deploying Apache Kafka on a Kubernetes cluster using Minikube, kubectl, and Helm.">
 <meta property="og:url" content="https://clustersandclimate.com/technology/kafka-on-kubernetes/">
-<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/kafka_hu904b045080b154616489b4faba9a9c78_1975723_1200x0_resize_box_3.png"><meta property="og:image:width" content="1200">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/kafka_hu_4e4965e1f33e3d34.png"><meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800"><meta property="og:image:alt" content="How to Set Up Kafka on Kubernetes"><meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to Set Up Kafka on Kubernetes">
-<meta name="twitter:description" content="A step-by-step guide to deploying Apache Kafka on a Kubernetes cluster using Minikube, kubectl, and Helm."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/kafka_hu904b045080b154616489b4faba9a9c78_1975723_1200x0_resize_box_3.png"><meta name="twitter:image:alt" content="How to Set Up Kafka on Kubernetes"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+<meta name="twitter:description" content="A step-by-step guide to deploying Apache Kafka on a Kubernetes cluster using Minikube, kubectl, and Helm."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/kafka_hu_4e4965e1f33e3d34.png"><meta name="twitter:image:alt" content="How to Set Up Kafka on Kubernetes"><meta name="twitter:site" content="https://x.com/DrViKiShi">
 </head>
 <body>
   <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
@@ -157,7 +151,7 @@
     </header>
 
     <figure id="featureimage" class="rounded-xl aspect-video">
-            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/kafka_hu904b045080b154616489b4faba9a9c78_1975723_750x0_resize_box_3.png" alt="" width="750" height="500">
+            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/kafka_hu_31b4d73fb048d39a.png" alt="" width="750" height="500">
 
     </figure>
 
@@ -175,30 +169,30 @@
 <p>Kafka can be deployed on managed Kubernetes services like Azure AKS, Amazon EKS, or Google GKE, or on a local cluster. For simplicity, this guide uses Minikube.</p>
 <h3 id="setting-up-a-local-minikube-cluster">Setting Up a Local Minikube Cluster</h3>
 <p>Download and install Minikube:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 </span></span><span style="display:flex;"><span>chmod +x minikube
 </span></span><span style="display:flex;"><span>sudo mv minikube /usr/local/bin/
 </span></span></code></pre></div><p>Start your Minikube cluster with sufficient resources:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube start --memory<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span> --cpus<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube start --memory<span style="color:#f92672">=</span><span style="color:#ae81ff">4096</span> --cpus<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 </span></span></code></pre></div><p>Check the cluster status:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube status
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube status
 </span></span></code></pre></div><h2 id="installing-kubernetes-cli-tools">Installing Kubernetes CLI Tools</h2>
 <ul>
 <li>
 <p><strong>kubectl</strong>: Used to interact with your cluster. <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/">Install guide</a></p>
 <p>Verify installation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl version --client
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl version --client
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Helm</strong>: Simplifies installation of applications like Kafka. <a href="https://helm.sh/docs/intro/install/">Install guide</a></p>
 <p>Verify installation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>helm version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>helm version
 </span></span></code></pre></div></li>
 </ul>
 <h2 id="kafka-cluster-configuration">Kafka Cluster Configuration</h2>
 <h3 id="setting-up-zookeeper-ensemble">Setting up Zookeeper Ensemble</h3>
 <p>Zookeeper manages broker metadata and coordinates distributed processes for Kafka. Deploy Zookeeper using the following manifest (<code>zookeeper.yml</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">zookeeper-deployment</span>
@@ -242,7 +236,7 @@
 </ul>
 <h3 id="configuring-kafka-brokers">Configuring Kafka Brokers</h3>
 <p>Kafka brokers handle records, assign offsets, and store data. Deploy Kafka using the following manifest (<code>kafka.yml</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kafka-deployment</span>
@@ -301,27 +295,27 @@
 </ul>
 <h2 id="deploying-zookeeper-and-kafka">Deploying Zookeeper and Kafka</h2>
 <p>Apply the manifests:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl create -f ./resources/zookeeper.yml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl create -f ./resources/zookeeper.yml
 </span></span><span style="display:flex;"><span>kubectl create -f ./resources/kafka.yml
 </span></span></code></pre></div><p>Check deployment status:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get deployments
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get deployments
 </span></span></code></pre></div><p>Example output:</p>
 <pre tabindex="0"><code>NAME                        READY   STATUS    RESTARTS   AGE
 kafka-deployment-5647b8549-w6skc    1/1     Running    0         2d
 zookeeper-deployment-b65b447fd-k4qhx 1/1     Running    0         2d
 </code></pre><p>You can also use the Minikube dashboard:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube dashboard
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>minikube dashboard
 </span></span></code></pre></div><h2 id="creating-a-kafka-topic">Creating a Kafka Topic</h2>
 <p>Exec into the Kafka pod and create a topic:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-topics --bootstrap-server localhost:9092 --create --topic topic-one --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-topics --bootstrap-server localhost:9092 --create --topic topic-one --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">3</span>
 </span></span></code></pre></div><p>Expected output:</p>
 <pre tabindex="0"><code>Created topic test-topic.
 </code></pre><h2 id="producing-and-consuming-messages">Producing and Consuming Messages</h2>
 <p>Start a producer:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-console-producer --broker-list localhost:9092 --topic topic-one
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-console-producer --broker-list localhost:9092 --topic topic-one
 </span></span></code></pre></div><p>Type a few messages and exit with Ctrl+C.</p>
 <p>Start a consumer (in another terminal):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-console-consumer --bootstrap-server localhost:9092 --topic topic-one --from-beginning
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kafka-console-consumer --bootstrap-server localhost:9092 --topic topic-one --from-beginning
 </span></span></code></pre></div><p>You should see the messages you produced. Note that with multiple partitions, message order is not guaranteed.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>With these steps, you have a basic Kafka cluster running on Kubernetes. For production, consider scaling replicas, adding persistent storage, and tuning resource allocations for reliability and performance.</p>
@@ -407,7 +401,7 @@ zookeeper-deployment-b65b447fd-k4qhx 1/1     Running    0         2d
 	
 	<a class="insert-link" href="https://clustersandclimate.com/technology/azure-csi-driver/"></a>
 
-	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/azure-csi_hucdef3f82689ba3b55f244f4983dc2520_2036548_750x0_resize_box_3.png" alt="Getting Started with CSI on Azure Kubernetes Service" width="750" height="500">
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/azure-csi_hu_db56bdf73d479bd2.png" alt="Getting Started with CSI on Azure Kubernetes Service" width="750" height="500">
 
 	  </figure>
 

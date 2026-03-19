@@ -2,40 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://clustersandclimate.com/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/technology/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://clustersandclimate.com/categories/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Cloud/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/</loc>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Devops/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Energy-Efficiency/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Greencloud/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/Implementation/</loc>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/technology/implementing-green-cloud-systems/</loc>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Kubernetes/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/technology/quiet-always-on-dev-test-clusters-energy/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Sustainability/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/technology/</loc>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/categories/technology/</loc>
+    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/technology/quiet-always-on-dev-test-clusters-energy/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Feature/</loc>
@@ -71,7 +77,7 @@
     <loc>https://clustersandclimate.com/tags/RCP/</loc>
     <lastmod>2026-01-23T11:58:00+09:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/categories/science/</loc>
+    <loc>https://clustersandclimate.com/categories/Science/</loc>
     <lastmod>2026-01-23T11:58:00+09:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/science/</loc>
@@ -359,10 +365,10 @@
     <loc>https://clustersandclimate.com/diary/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/tags/Diary/</loc>
+    <loc>https://clustersandclimate.com/categories/diary/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/categories/diary/</loc>
+    <loc>https://clustersandclimate.com/tags/Diary/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/diary/%E0%A4%A6%E0%A4%BF%E0%A4%82%E0%A4%A1%E0%A5%80-%E0%A4%B6%E0%A4%BE%E0%A4%B3%E0%A5%87%E0%A4%AE%E0%A4%A7%E0%A4%B2%E0%A5%80/</loc>

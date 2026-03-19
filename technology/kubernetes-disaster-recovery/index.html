@@ -18,12 +18,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://clustersandclimate.com/favicon-32.png"> 
 <link rel="icon" type="image/png" sizes="64x64" href="https://clustersandclimate.com/favicon-64.png"> 
 
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -33,18 +31,14 @@
           gtag('js', new Date());
           gtag('config', 'G-W43KWS3B37');
         }
-      </script>
-    
-  
-
-<meta property="og:type" content="article">
+      </script><meta property="og:type" content="article">
 <meta property="og:title" content="Kubernetes Disaster Recovery: Lessons from Natural Disasters">
 <meta property="og:description" content="How to design resilient Kubernetes clusters that can survive real disasters - insights from living through earthquakes, tsunamis, and typhoons in Japan.">
 <meta property="og:url" content="https://clustersandclimate.com/technology/kubernetes-disaster-recovery/">
-<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu76bffe4ff55d1bb48bfcb23181a223dc_2081590_1200x0_resize_box_3.png"><meta property="og:image:width" content="1200">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu_9432282e2fdf6e4c.png"><meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800"><meta property="og:image:alt" content="Kubernetes Disaster Recovery: Lessons from Natural Disasters"><meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes Disaster Recovery: Lessons from Natural Disasters">
-<meta name="twitter:description" content="How to design resilient Kubernetes clusters that can survive real disasters - insights from living through earthquakes, tsunamis, and typhoons in Japan."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu76bffe4ff55d1bb48bfcb23181a223dc_2081590_1200x0_resize_box_3.png"><meta name="twitter:image:alt" content="Kubernetes Disaster Recovery: Lessons from Natural Disasters"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+<meta name="twitter:description" content="How to design resilient Kubernetes clusters that can survive real disasters - insights from living through earthquakes, tsunamis, and typhoons in Japan."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu_9432282e2fdf6e4c.png"><meta name="twitter:image:alt" content="Kubernetes Disaster Recovery: Lessons from Natural Disasters"><meta name="twitter:site" content="https://x.com/DrViKiShi">
 </head>
 <body>
   <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
@@ -157,7 +151,7 @@
     </header>
 
     <figure id="featureimage" class="rounded-xl aspect-video">
-            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu76bffe4ff55d1bb48bfcb23181a223dc_2081590_750x0_resize_box_3.png" alt="" width="750" height="500">
+            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/Disaster-Recovery_hu_3efb983c97312e4b.png" alt="" width="750" height="500">
 
     </figure>
 
@@ -179,7 +173,7 @@
 <h2 id="designing-kubernetes-clusters-for-real-disasters">Designing Kubernetes Clusters for Real Disasters</h2>
 <h3 id="1-multi-region-architecture-geographic-distribution">1. Multi-Region Architecture: Geographic Distribution</h3>
 <p>Just as Japan&rsquo;s infrastructure spans multiple seismic zones, your Kubernetes workloads should span multiple failure domains.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Example: Multi-region cluster federation</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Example: Multi-region cluster federation</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -213,7 +207,7 @@
 </ul>
 <h3 id="2-data-backup-and-replication-strategies">2. Data Backup and Replication Strategies</h3>
 <p>During the 2018 Hokkaido earthquake, I witnessed how quickly critical infrastructure could fail. The half the island lost electrical power within minutes, and I watched as unprepared systems went dark while resilient ones continued operating on backup power and redundant connections. Digital assets need similar protection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Velero backup configuration for disaster recovery</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Velero backup configuration for disaster recovery</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">velero.io/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Schedule</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -238,7 +232,7 @@
 </ul>
 <h3 id="3-network-resilience-and-communication">3. Network Resilience and Communication</h3>
 <p>When disaster strikes, network congestion can cripple response efforts. Design for degraded connectivity.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Network policies for disaster scenarios</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Network policies for disaster scenarios</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">NetworkPolicy</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -273,7 +267,7 @@
 <h2 id="operational-patterns-from-disaster-response">Operational Patterns from Disaster Response</h2>
 <h3 id="1-incident-command-system-ics-for-kubernetes">1. Incident Command System (ICS) for Kubernetes</h3>
 <p>Japan&rsquo;s disaster response follows a strict hierarchy that scales from local to national levels. Apply similar principles to your operations.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># RBAC for disaster response roles</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># RBAC for disaster response roles</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -300,8 +294,8 @@
 </ul>
 <h3 id="2-runbooks-and-automation">2. Runbooks and Automation</h3>
 <p>During the 2018 Hokkaido earthquake, pre-planned responses and automated systems kept essential services running even when human operators couldn&rsquo;t reach their posts. Your disaster recovery should be equally scripted and automated.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># disaster-recovery-runbook.sh</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># disaster-recovery-runbook.sh</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Phase 1: Assessment</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== DISASTER RECOVERY INITIATED ===&#34;</span>
@@ -320,7 +314,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
 </span></span></code></pre></div><h3 id="3-resource-prioritization-and-graceful-degradation">3. Resource Prioritization and Graceful Degradation</h3>
 <p>Not all services are equally critical. Implement triage principles.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Priority classes for disaster scenarios</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Priority classes for disaster scenarios</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">scheduling.k8s.io/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PriorityClass</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -338,7 +332,7 @@
 </span></span></code></pre></div><h2 id="testing-your-disaster-recovery">Testing Your Disaster Recovery</h2>
 <h3 id="chaos-engineering-planned-disasters">Chaos Engineering: Planned Disasters</h3>
 <p>Just as Japan conducts regular earthquake drills, you need to test your systems regularly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Chaos Monkey configuration</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Chaos Monkey configuration</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -356,11 +350,11 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      target: &#34;app=database&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      parameters:
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        delay: &#34;500ms&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        duration: &#34;10m&#34;</span>    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        duration: &#34;10m&#34;</span>
 </span></span></code></pre></div><h3 id="game-days-and-tabletop-exercises">Game Days and Tabletop Exercises</h3>
 <p>Regular disaster simulations help teams practice coordinated responses and identify gaps in procedures.</p>
 <h2 id="monitoring-and-alerting-for-disasters">Monitoring and Alerting for Disasters</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Disaster-focused monitoring</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Disaster-focused monitoring</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">monitoring.coreos.com/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PrometheusRule</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -389,7 +383,7 @@
 </ul>
 <h2 id="economic-considerations">Economic Considerations</h2>
 <p>Disaster recovery isn&rsquo;t free, but the cost of not having it can be catastrophic.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Cost-optimized DR strategy</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Cost-optimized DR strategy</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -401,7 +395,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">acceptable-rto</span>: |<span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    critical: &#34;5 minutes&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    important: &#34;1 hour&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    nice-to-have: &#34;24 hours&#34;</span>    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    nice-to-have: &#34;24 hours&#34;</span>
 </span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>Having lived through real disasters—earthquakes that shake the ground for minutes, island-wide power outages that plunge entire regions into darkness, typhoons that shut down entire cities—I&rsquo;ve learned that the difference between systems that survive and those that don&rsquo;t isn&rsquo;t just technical sophistication. It&rsquo;s the understanding that disasters aren&rsquo;t theoretical edge cases—they&rsquo;re inevitable realities that demand respect, preparation, and constant vigilance.</p>
 <p>Your Kubernetes clusters will face disasters. The question isn&rsquo;t if, but when. By applying lessons learned from societies that have survived and thrived despite constant natural threats, we can build systems that don&rsquo;t just survive disasters—they emerge stronger.</p>
@@ -491,7 +485,7 @@
 	
 	<a class="insert-link" href="https://clustersandclimate.com/technology/kafka-on-kubernetes/"></a>
 
-	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/kafka_hu904b045080b154616489b4faba9a9c78_1975723_750x0_resize_box_3.png" alt="How to Set Up Kafka on Kubernetes" width="750" height="500">
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/kafka_hu_31b4d73fb048d39a.png" alt="How to Set Up Kafka on Kubernetes" width="750" height="500">
 
 	  </figure>
 
@@ -508,7 +502,7 @@
 	
 	<a class="insert-link" href="https://clustersandclimate.com/technology/azure-csi-driver/"></a>
 
-	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/azure-csi_hucdef3f82689ba3b55f244f4983dc2520_2036548_750x0_resize_box_3.png" alt="Getting Started with CSI on Azure Kubernetes Service" width="750" height="500">
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/azure-csi_hu_db56bdf73d479bd2.png" alt="Getting Started with CSI on Azure Kubernetes Service" width="750" height="500">
 
 	  </figure>
 

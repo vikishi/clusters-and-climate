@@ -18,12 +18,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://clustersandclimate.com/favicon-32.png"> 
 <link rel="icon" type="image/png" sizes="64x64" href="https://clustersandclimate.com/favicon-64.png"> 
 
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -33,18 +31,14 @@
           gtag('js', new Date());
           gtag('config', 'G-W43KWS3B37');
         }
-      </script>
-    
-  
-
-<meta property="og:type" content="article">
+      </script><meta property="og:type" content="article">
 <meta property="og:title" content="Getting Started with CSI on Azure Kubernetes Service">
 <meta property="og:description" content="A comprehensive, practical guide to deploying and using the Azure Disk CSI driver in AKS.">
 <meta property="og:url" content="https://clustersandclimate.com/technology/azure-csi-driver/">
-<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/azure-csi_hucdef3f82689ba3b55f244f4983dc2520_2036548_1200x0_resize_box_3.png"><meta property="og:image:width" content="1200">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/azure-csi_hu_1428c5c924c49f43.png"><meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800"><meta property="og:image:alt" content="Getting Started with CSI on Azure Kubernetes Service"><meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting Started with CSI on Azure Kubernetes Service">
-<meta name="twitter:description" content="A comprehensive, practical guide to deploying and using the Azure Disk CSI driver in AKS."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/azure-csi_hucdef3f82689ba3b55f244f4983dc2520_2036548_1200x0_resize_box_3.png"><meta name="twitter:image:alt" content="Getting Started with CSI on Azure Kubernetes Service"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+<meta name="twitter:description" content="A comprehensive, practical guide to deploying and using the Azure Disk CSI driver in AKS."><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/azure-csi_hu_1428c5c924c49f43.png"><meta name="twitter:image:alt" content="Getting Started with CSI on Azure Kubernetes Service"><meta name="twitter:site" content="https://x.com/DrViKiShi">
 </head>
 <body>
   <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
@@ -157,7 +151,7 @@
     </header>
 
     <figure id="featureimage" class="rounded-xl aspect-video">
-            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/azure-csi_hucdef3f82689ba3b55f244f4983dc2520_2036548_750x0_resize_box_3.png" alt="" width="750" height="500">
+            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/azure-csi_hu_db56bdf73d479bd2.png" alt="" width="750" height="500">
 
     </figure>
 
@@ -175,13 +169,13 @@
 </ul>
 <h2 id="installing-the-azure-disk-csi-driver">Installing the Azure Disk CSI Driver</h2>
 <p>Azure’s CSI driver can be installed directly using a deployment script. The following command will fetch and install version v1.30.3 (check for the latest version before running):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -skSL https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/v1.30.3/deploy/install-driver.sh | bash -s v1.30.3 snapshot –
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -skSL https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/v1.30.3/deploy/install-driver.sh | bash -s v1.30.3 snapshot –
 </span></span></code></pre></div><p>This script deploys the necessary controller and node components to your cluster.</p>
 <h2 id="verifying-the-deployment">Verifying the Deployment</h2>
 <p>Once installation is complete, confirm that the driver pods are up and running:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get pods -n kube-system -l app<span style="color:#f92672">=</span>csi-azuredisk
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get pods -n kube-system -l app<span style="color:#f92672">=</span>csi-azuredisk
 </span></span></code></pre></div><p>You should see both node and controller pods in the <code>Running</code> state. Example output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>NAME                                READY   STATUS    RESTARTS   AGE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>NAME                                READY   STATUS    RESTARTS   AGE
 </span></span><span style="display:flex;"><span>csi-azuredisknode-xyz12             3/3     Running   <span style="color:#ae81ff">0</span>          5m
 </span></span><span style="display:flex;"><span>csi-azuredisknode-abcd3             3/3     Running   <span style="color:#ae81ff">0</span>          5m
 </span></span><span style="display:flex;"><span>csi-azuredisknode-pqrs9             3/3     Running   <span style="color:#ae81ff">0</span>          5m
@@ -189,7 +183,7 @@
 </span></span><span style="display:flex;"><span>csi-azurediskctrl-1                 5/5     Running   <span style="color:#ae81ff">0</span>          5m
 </span></span></code></pre></div><h2 id="defining-a-storageclass">Defining a StorageClass</h2>
 <p>To enable dynamic provisioning, create a StorageClass that references the Azure Disk CSI driver. Save the following as <code>aks-disk-storageclass.yaml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">storage.k8s.io/v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">storage.k8s.io/v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">StorageClass</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">aks-disk-storageclass</span>
@@ -200,10 +194,10 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">reclaimPolicy</span>: <span style="color:#ae81ff">Delete</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">volumeBindingMode</span>: <span style="color:#ae81ff">Immediate</span>
 </span></span></code></pre></div><p>Apply it with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f aks-disk-storageclass.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f aks-disk-storageclass.yaml
 </span></span></code></pre></div><h2 id="requesting-persistent-storage">Requesting Persistent Storage</h2>
 <p>Next, create a PersistentVolumeClaim (PVC) to request storage from the above StorageClass. Save as <code>aks-disk-pvc.yaml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">PersistentVolumeClaim</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">aks-disk-pvc</span>
@@ -215,10 +209,10 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">requests</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">storage</span>: <span style="color:#ae81ff">50Gi</span>
 </span></span></code></pre></div><p>Apply the PVC:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f aks-disk-pvc.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f aks-disk-pvc.yaml
 </span></span></code></pre></div><h2 id="using-the-pvc-in-your-application">Using the PVC in Your Application</h2>
 <p>To mount the provisioned disk in a pod, reference the PVC in your deployment spec. Here’s an example snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">containers</span>:
 </span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">web</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx:latest</span>

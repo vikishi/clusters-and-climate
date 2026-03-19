@@ -13,7 +13,7 @@
       <link>https://clustersandclimate.com/technology/kafka-on-kubernetes/</link>
       <pubDate>Mon, 07 Jul 2025 00:02:00 +0530</pubDate>
       <guid>https://clustersandclimate.com/technology/kafka-on-kubernetes/</guid>
-      <description>Introduction Apache Kafka is a powerful distributed event streaming platform. Running Kafka on Kubernetes allows you to leverage container orchestration for scalability and resilience.</description>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Apache Kafka is a powerful distributed event streaming platform. Running Kafka on Kubernetes allows you to leverage container orchestration for scalability and resilience. This article walks you through setting up Kafka on a local Kubernetes cluster using Minikube, with all the necessary tools and configuration manifests.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
