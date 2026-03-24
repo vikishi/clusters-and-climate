@@ -85,6 +85,38 @@ Often improved developer experience ephemeral environments are often faster and 
 
 The pattern can repeat across industries. Financial services firms, e-commerce platforms, and enterprise software companies etc.
 
+### A Personal Example: Nightly Build Optimization
+
+In my own work, I reduced the frequency of daily nightly builds to 3 days per week. This single change reduced infrastructure costs from $10,844 to $4,407 over 6 months—a savings of $6,437 over that period.
+
+To estimate the carbon reduction over the 6-month period:
+* Total cost savings: $6,437 (6 months)
+* Estimated energy reduction: ~4,500 kWh (using ~0.7 kWh per dollar of compute cost)
+* **Carbon reduction: ~1.8 tons CO2 over 6 months**
+
+Projected ongoing impact:
+* Monthly carbon reduction: ~0.3 tons CO2/month
+* Annual carbon reduction: ~3.6 tons CO2/year
+
+For context, the annual reduction is equivalent to:
+* Taking 1.5-2 average Indian cars off the road for a year (avg. Indian car emits ~2 tons CO2/year)
+* The carbon sequestered by ~170 tree seedlings grown for 10 years
+* Avoiding approximately 1,600 liters of gasoline consumption
+
+**Before the change (January-June):**
+
+![Infrastructure costs before optimization](/images/tech/Jan-June%20cost.png)
+*Figure 1: Infrastructure costs running nightly builds every day (January-June period)*
+
+**After the change (July-December):**
+
+![Infrastructure costs after optimization](/images/tech/July%20to%20Dec%20cost.png)
+*Figure 2: Infrastructure costs after reducing build frequency to 3 days per week (July-December period)*
+
+This wasn't a massive infrastructure overhaul. It was a simple schedule change: running builds on Sunday, Monday, and Thursdays instead of every night. The builds still ran when needed for releases, but we eliminated unnecessary daily runs that added little value while consuming significant resources.
+
+The calculation uses mid-range industry estimates (0.7 kWh per dollar of cloud compute, 0.4 kg CO2/kWh). Actual values vary based on cloud provider, region, and energy mix. AWS, Azure, and GCP provide region-specific carbon intensity data that can make these estimates more precise.
+
 ## Building Support and Managing Resistance
 
 Technical implementation is only half the challenge. Cultural adoption matters just as much.
