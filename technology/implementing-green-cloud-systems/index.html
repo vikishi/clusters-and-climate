@@ -141,7 +141,7 @@
           </li>
 
           <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
-            8 min read
+            9 min read
           </li>
 
         </ul>
@@ -205,6 +205,33 @@ Study conducted in Pune region show that techniques such as virtualization, dyna
 </ul>
 <p>Often improved developer experience ephemeral environments are often faster and cleaner. Faster feedback loops when spinning up is automated, it&rsquo;s less painful.</p>
 <p>The pattern can repeat across industries. Financial services firms, e-commerce platforms, and enterprise software companies etc.</p>
+<h3 id="a-personal-example-nightly-build-optimization">A Personal Example: Nightly Build Optimization</h3>
+<p>In my own work, I reduced the frequency of daily nightly builds to 3 days per week. This single change reduced infrastructure costs from $10,844 to $4,407 over 6 months—a savings of $6,437 over that period.</p>
+<p>To estimate the carbon reduction over the 6-month period:</p>
+<ul>
+<li>Total cost savings: $6,437 (6 months)</li>
+<li>Estimated energy reduction: ~4,500 kWh (using ~0.7 kWh per dollar of compute cost)</li>
+<li><strong>Carbon reduction: ~1.8 tons CO2 over 6 months</strong></li>
+</ul>
+<p>Projected ongoing impact:</p>
+<ul>
+<li>Monthly carbon reduction: ~0.3 tons CO2/month</li>
+<li>Annual carbon reduction: ~3.6 tons CO2/year</li>
+</ul>
+<p>For context, the annual reduction is equivalent to:</p>
+<ul>
+<li>Taking 1.5-2 average Indian cars off the road for a year (avg. Indian car emits ~2 tons CO2/year)</li>
+<li>The carbon sequestered by ~170 tree seedlings grown for 10 years</li>
+<li>Avoiding approximately 1,600 liters of gasoline consumption</li>
+</ul>
+<p><strong>Before the change (January-June):</strong></p>
+<p><img src="/images/tech/Jan-June%20cost.png" alt="Infrastructure costs before optimization">
+<em>Figure 1: Infrastructure costs running nightly builds every day (January-June period)</em></p>
+<p><strong>After the change (July-December):</strong></p>
+<p><img src="/images/tech/July%20to%20Dec%20cost.png" alt="Infrastructure costs after optimization">
+<em>Figure 2: Infrastructure costs after reducing build frequency to 3 days per week (July-December period)</em></p>
+<p>This wasn&rsquo;t a massive infrastructure overhaul. It was a simple schedule change: running builds on Sunday, Monday, and Thursdays instead of every night. The builds still ran when needed for releases, but we eliminated unnecessary daily runs that added little value while consuming significant resources.</p>
+<p>The calculation uses mid-range industry estimates (0.7 kWh per dollar of cloud compute, 0.4 kg CO2/kWh). Actual values vary based on cloud provider, region, and energy mix. AWS, Azure, and GCP provide region-specific carbon intensity data that can make these estimates more precise.</p>
 <h2 id="building-support-and-managing-resistance">Building Support and Managing Resistance</h2>
 <p>Technical implementation is only half the challenge. Cultural adoption matters just as much.</p>
 <ol>

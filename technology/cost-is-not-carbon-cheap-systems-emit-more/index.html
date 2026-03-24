@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cost Is Not Carbon: Why Cheap Systems Can Emit More | Clusters and Climate</title>
+
+<meta name="description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="http://localhost:1313/favicon-64.png"> 
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W43KWS3B37');
+        }
+      </script><meta property="og:type" content="article">
+<meta property="og:title" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More">
+<meta property="og:description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters.">
+<meta property="og:url" content="http://localhost:1313/technology/cost-is-not-carbon-cheap-systems-emit-more/">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="http://localhost:1313/images/tech/cost-carbon.png"><meta property="og:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More">
+<meta name="twitter:description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually …"><meta name="twitter:image" content="http://localhost:1313/images/tech/cost-carbon.png"><meta name="twitter:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full p-1.5">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-spin bi bi-egg-fried fill-white" viewBox="0 0 16 16">
+						<path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+						<path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"></path>
+					</svg>
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="http://localhost:1313/">Clusters and Climate</a></h2>
+			</div>		<div class="flex items-center flex-wrap mx-2" style="gap: 6px;"><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/climate/">
+						Climate
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/diary/">
+						Diary
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/life/">
+						Life
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/outdoor/">
+						Outdoor
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/science/">
+						Science
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="http://localhost:1313/technology/">
+						Technology
+					</a></div>		</div>
+		<div class="flex items-center ml-auto">
+			<button class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/about/">About</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/categories/">Categories</a>
+    </li>
+    </ul>
+  </nav>
+<div id="search-bar" class="block mt-3 close">
+	<form id="search" class="flex items-stretch">
+		<input class="w-full block px-6 py-2 rounded-l-full focus:outline-none border border-zinc-200" type="text" placeholder="Search...">
+		<button class="flex items-center px-7 py-2.5 rounded-r-full border border-zinc-200 ">
+			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-pulse" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+			</svg>
+		</button>
+	</form>
+</div>
+</div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="http://localhost:1313/">Clusters and Climate</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="http://localhost:1313/technology/">Technologies</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">Cost Is Not Carbon: Why Cheap Systems Can Emit More</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold">The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters. </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="http://localhost:1313/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar avatar" width="734" height="734">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">Dr. Vivek Shilimkar</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2026-03-20T00:00:00&#43;00:00">March 20, 2026</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            9 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+    <figure id="featureimage" class="rounded-xl aspect-video">
+
+    </figure>
+
+    <div id="content" class="mb-14">
+      <p>Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.</p>
+<p>This matters because most engineering organizations treat them as equivalent. Teams chase cheaper cloud regions, older instance types, and maximum discount utilization—all while assuming they&rsquo;re reducing environmental impact. The assumption is rarely questioned because cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.</p>
+<p>The result: infrastructure decisions that reduce cloud bills by 20-30% while increasing carbon emissions by similar or larger margins. The problem isn&rsquo;t malicious intent. It&rsquo;s that we optimize for what we measure, and we don&rsquo;t measure carbon.</p>
+<h2 id="the-dangerous-assumption">The Dangerous Assumption</h2>
+<p>There&rsquo;s a widely held belief in software engineering circles that if you&rsquo;re reducing cloud costs, you must also be reducing environmental impact. The logic seems sound on the surface:</p>
+<ul>
+<li>Less money spent = fewer resources used</li>
+<li>Fewer resources = less energy consumed</li>
+<li>Less energy = lower carbon emissions</li>
+</ul>
+<p>Except that&rsquo;s not how it works in practice.</p>
+<p>I&rsquo;ve seen this assumption lead teams to make decisions that increase their carbon footprint by 30-40% while celebrating cost reductions. The problem isn&rsquo;t that teams don&rsquo;t care about the environment - it&rsquo;s that cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.</p>
+<h2 id="why-cheap-can-mean-dirty">Why Cheap Can Mean Dirty</h2>
+<p>Let me walk through the ways that cost optimization can actually increase carbon emissions.</p>
+<h3 id="1-region-shopping-based-on-price">1. Region Shopping Based on Price</h3>
+<p>Cloud providers have different prices in different regions. It&rsquo;s tempting to move workloads to cheaper regions to reduce bills. But regions have vastly different carbon intensities in their electricity grids.</p>
+<p>A colleague once moved batch processing workloads from Ireland (eu-west-1) to Ohio (us-east-2) because it was 22% cheaper. What they didn&rsquo;t know:</p>
+<ul>
+<li>Ireland&rsquo;s grid is approximately 40% renewable</li>
+<li>Ohio&rsquo;s grid is approximately 85% fossil fuels (mostly coal and natural gas)</li>
+</ul>
+<p>The carbon emissions per computation roughly doubled, even though the cost decreased. The cheaper region was powered by dirtier energy sources.</p>
+<h3 id="2-older-generation-instances">2. Older Generation Instances</h3>
+<p>Older compute instances are often cheaper because they&rsquo;re being phased out. But they&rsquo;re also less energy-efficient. A five-year-old processor might consume 40-60% more power to do the same work as a modern one.</p>
+<p>I&rsquo;ve seen teams choose older instance types (t2 instead of t3, or older GPU generations) to save money. The cost savings are real - maybe 15-20% - but the energy consumption increases significantly. You&rsquo;re paying less per hour, but you&rsquo;re using more electricity per task completed.</p>
+<h3 id="3-over-provisioning-to-capture-discounts">3. Over-provisioning to Capture Discounts</h3>
+<p>Reserved instances and savings plans offer significant discounts - sometimes 50-70% off on-demand pricing. The catch is you pay upfront for capacity whether you use it or not.</p>
+<p>This creates an incentive to over-provision. Teams reserve more capacity than they need to maximize &ldquo;value.&rdquo; The result? Resources running idle, consuming power and emitting carbon, just because they were financially committed.</p>
+<p>I worked with a company that had 40% of their reserved capacity sitting idle during off-peak hours. From a cost perspective, they were already paid for, so there was no financial incentive to shut them down. From a carbon perspective, they were burning electricity for nothing.</p>
+<h3 id="4-spot-instances-without-efficiency-gains">4. Spot Instances Without Efficiency Gains</h3>
+<p>Spot instances can be 70-90% cheaper than on-demand. They&rsquo;re great for cost optimization and can be great for carbon optimization too - when used correctly.</p>
+<p>But here&rsquo;s what often happens: teams use spot instances without changing their architectures. They run the same workloads, just on cheaper compute. If the underlying workloads are inefficient - poorly optimized code, unnecessary processing, data fetched repeatedly - you&rsquo;re still wasting energy, you&rsquo;re just paying less for it.</p>
+<p>The carbon emissions per useful work done doesn&rsquo;t improve just because the invoice is smaller.</p>
+<h3 id="5-the-utilization-trap">5. The Utilization Trap</h3>
+<p>Here&rsquo;s a counterintuitive one: sometimes the most cost-effective choice is the least carbon-efficient.</p>
+<p>Consider two scenarios for running batch jobs:</p>
+<ul>
+<li><strong>Option A</strong>: Use a powerful, modern instance that completes the job in 1 hour at $5</li>
+<li><strong>Option B</strong>: Use a cheaper, older instance that completes the same job in 2.5 hours at $4</li>
+</ul>
+<p>From a cost perspective, Option B wins. But from a carbon perspective:</p>
+<ul>
+<li>Option A uses modern, efficient processors running for less time</li>
+<li>Option B uses older, less efficient processors running much longer</li>
+</ul>
+<p>Even though you&rsquo;re paying less, the total energy consumed - and carbon emitted - can be higher in Option B.</p>
+<h2 id="what-actually-matters-carbon-intensity">What Actually Matters: Carbon Intensity</h2>
+<p>If cost isn&rsquo;t a good proxy for carbon, what should we measure?</p>
+<p>The answer is <strong>carbon intensity</strong> - the grams of CO₂ emitted per unit of computing work done. This depends on:</p>
+<ol>
+<li><strong>Grid Carbon Intensity</strong>: Where is the electricity coming from? Renewable energy, nuclear, natural gas, coal?</li>
+<li><strong>Hardware Efficiency</strong>: How efficient is the processor? Newer architectures do more work per watt.</li>
+<li><strong>Utilization</strong>: Are you running resources at high utilization or leaving them idle?</li>
+<li><strong>Workload Efficiency</strong>: How much unnecessary work is your code doing?</li>
+</ol>
+<p>These factors don&rsquo;t always align with cost.</p>
+<h2 id="real-numbers-a-case-study">Real Numbers: A Case Study</h2>
+<p>Let me share concrete numbers from a project I consulted on last year.</p>
+<p>A fintech company was running machine learning training jobs. They had two options:</p>
+<p><strong>Virginia (us-east-1) — Cheaper</strong></p>
+<ul>
+<li>Instance cost: $3.20/hour for older GPU generation</li>
+<li>Training time: 6 hours</li>
+<li>Total cost: $19.20</li>
+<li>Grid carbon intensity: ~400 gCO₂/kWh</li>
+<li>GPU power draw: 300W</li>
+<li>Total emissions: ~720 gCO₂</li>
+</ul>
+<p><strong>Oregon (us-west-2) — More Expensive</strong></p>
+<ul>
+<li>Instance cost: $4.50/hour for newer GPU generation</li>
+<li>Training time: 3.5 hours</li>
+<li>Total cost: $15.75</li>
+<li>Grid carbon intensity: ~150 gCO₂/kWh (high hydro/wind)</li>
+<li>GPU power draw: 220W</li>
+<li>Total emissions: ~116 gCO₂</li>
+</ul>
+<p>Surprisingly, Oregon was both cheaper AND cleaner due to faster, more efficient hardware and a cleaner grid. But if they had only looked at the per-hour instance cost, Virginia would have seemed like the better choice.</p>
+<p>Now consider a third option:</p>
+<p><strong>Poland (eu-central-1) — Cheapest</strong></p>
+<ul>
+<li>Instance cost: $2.80/hour for older GPU</li>
+<li>Training time: 7 hours</li>
+<li>Total cost: $19.60</li>
+<li>Grid carbon intensity: ~650 gCO₂/kWh (coal-heavy)</li>
+<li>GPU power draw: 310W</li>
+<li>Total emissions: ~1,400 gCO₂</li>
+</ul>
+<p>The cheapest region emitted 12x more carbon than the Oregon region.</p>
+<h2 id="how-to-actually-optimize-for-carbon">How to Actually Optimize for Carbon</h2>
+<p>If you want to reduce carbon emissions, not just costs, here&rsquo;s what to focus on:</p>
+<h3 id="1-choose-low-carbon-regions">1. Choose Low-Carbon Regions</h3>
+<p>Look up the carbon intensity of cloud regions. Major cloud providers publish this data:</p>
+<ul>
+<li>AWS has sustainability dashboards</li>
+<li>Google Cloud has carbon footprint reporting</li>
+<li>Azure publishes emissions data per region</li>
+</ul>
+<p>Prioritize regions with clean energy grids:</p>
+<ul>
+<li>Nordic countries (hydro, wind, nuclear)</li>
+<li>Quebec, Canada (hydro)</li>
+<li>Oregon, US (hydro, wind)</li>
+<li>Some parts of Europe (wind, solar, nuclear mix)</li>
+</ul>
+<p>Avoid regions heavily dependent on coal:</p>
+<ul>
+<li>Some US Midwest regions</li>
+<li>Parts of Eastern Europe</li>
+<li>Some Asian regions</li>
+</ul>
+<h3 id="2-use-modern-efficient-instance-types">2. Use Modern, Efficient Instance Types</h3>
+<p>Newer processor generations (Graviton3, Intel Ice Lake, AMD Milan) are significantly more energy-efficient. The slight price premium is often offset by:</p>
+<ul>
+<li>Faster execution times</li>
+<li>Lower energy consumption</li>
+<li>Better performance per watt</li>
+</ul>
+<p>Choose ARM-based instances (Graviton2/3) when possible - they often provide the same performance at 60% of the power consumption.</p>
+<h3 id="3-actually-measure-utilization">3. Actually Measure Utilization</h3>
+<p>Carbon efficiency requires high utilization, not just running resources. Idle CPU cycles still consume about 60% of peak power.</p>
+<ul>
+<li>Implement proper autoscaling</li>
+<li>Shut down non-production environments when not in use</li>
+<li>Use serverless for sporadic workloads</li>
+<li>Batch jobs to maximize utilization windows</li>
+</ul>
+<h3 id="4-optimize-the-workload-itself">4. Optimize the Workload Itself</h3>
+<p>The most carbon-efficient compute is the compute you don&rsquo;t need to do:</p>
+<ul>
+<li>Profile and optimize code inefficiencies</li>
+<li>Cache results to avoid repeated calculations</li>
+<li>Use efficient data formats and compression</li>
+<li>Question whether every computation is necessary</li>
+</ul>
+<p>A 20% improvement in code efficiency reduces both cost and carbon by 20%, no matter where it runs.</p>
+<h3 id="5-time-shift-where-possible">5. Time-Shift Where Possible</h3>
+<p>Grid carbon intensity varies by time of day. Solar peaks at midday, wind is often strongest at night. Some regions publish real-time carbon intensity data.</p>
+<p>For batch jobs and non-urgent workloads, schedule them when grid carbon is lowest. This can reduce emissions by 20-40% at no additional cost.</p>
+<h3 id="6-track-carbon-as-a-metric">6. Track Carbon as a Metric</h3>
+<p>What gets measured gets managed. Add carbon tracking to your dashboards:</p>
+<ul>
+<li>Estimated kWh consumed per service</li>
+<li>Carbon per deployment or per API call</li>
+<li>Regional carbon intensity trends</li>
+<li>Progress toward reduction targets</li>
+</ul>
+<p>Make carbon visible the same way you make cost visible.</p>
+<h2 id="the-uncomfortable-trade-offs">The Uncomfortable Trade-offs</h2>
+<p>Sometimes optimizing for carbon does cost more money. A cleaner region might be 15% pricier. A newer instance type might not qualify for existing reserved capacity. This creates real tensions between sustainability goals and financial constraints.</p>
+<p>I don&rsquo;t have a magic answer for this. Different organizations will make different choices based on their values and constraints. But I think the first step is knowing the trade-off exists and making it explicitly rather than assuming cost optimization is good enough.</p>
+<p>If your company has sustainability goals or carbon reduction targets, those need to be translated into engineering metrics and budget allocations. You can&rsquo;t achieve carbon reduction as a side effect of cost optimization - they require intentional, sometimes expensive, trade-offs.</p>
+<h2 id="what-this-means-practically">What This Means Practically</h2>
+<p>If you&rsquo;re an engineer or architect making infrastructure decisions:</p>
+<ul>
+<li>Don&rsquo;t assume cheaper means greener</li>
+<li>Check region carbon intensity before moving workloads</li>
+<li>Consider total runtime and energy efficiency, not just hourly cost</li>
+<li>Measure actual utilization, not just reserved capacity</li>
+<li>Optimize workloads for efficiency, not just throughput</li>
+</ul>
+<p>If you&rsquo;re in leadership:</p>
+<ul>
+<li>Add carbon metrics to infrastructure dashboards</li>
+<li>Include emissions in cost/benefit analyses for major infrastructure changes</li>
+<li>Consider allocating budget for carbon reduction even when it increases costs</li>
+<li>Don&rsquo;t celebrate cost reductions without checking environmental impact</li>
+</ul>
+<h2 id="the-bottom-line">The Bottom Line</h2>
+<p>Cost and carbon are related, but they&rsquo;re not the same thing. Assuming they are leads to decisions that save money while increasing environmental impact.</p>
+<p>The cloud industry has made great progress on cost visibility and optimization. We have sophisticated tools for tracking spend, forecasting costs, and optimizing bills. We need the same level of sophistication for carbon.</p>
+<p>Until carbon emissions are as visible and as tracked as cloud costs, teams will continue to optimize for what they can see. And what we can&rsquo;t see, we often make worse while thinking we&rsquo;re making it better.</p>
+<p>So next time someone celebrates moving to cheaper instances or regions, ask the question: &ldquo;But what happened to our carbon footprint?&rdquo;</p>
+<p>The answer might be uncomfortable. But it&rsquo;s a question worth asking.</p>
+<hr>
+<p><em>Note: The numbers in this article are illustrative examples based on typical scenarios. Actual carbon intensities vary by region, time of day, and grid composition. For precise calculations for your infrastructure, use cloud provider carbon reporting tools and regional grid data.</em></p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Greencloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Greencloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Sustainability/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Sustainability</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Cloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Cloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Carbon/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Carbon</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Cost-Optimization/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Cost-Optimization</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Energy-Efficiency/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Energy-Efficiency</a></li>
+    </ul>
+</div>
+
+    <footer id="content-footer" class="not-prose">
+
+      <div id="comment" class="border p-8 bg-zinc-100 rounded-2xl">
+
+        <h2 class="text-xl font-semibold mb-4">Comments</h2>
+
+        <script src="https://giscus.app/client.js"
+                data-repo="vivek-shilimkar/clusters-and-climate"
+                data-repo-id="R_kgDONhx8ng"
+                data-category="General"
+                data-category-id="DIC_kwDONhx8ns4Clb8B"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+      </div>
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar">
+
+        <h2 class="text-xl font-bold my-4">Written by : Dr. Vivek Shilimkar</h2>
+
+        <p class="mb-4">Cloud Engineer | Climate Scientist | Green Cloud Advocate | Nature Enthusiast | Science Communicator</p>
+
+        <ul class="flex flex-wrap space-x-4">
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg>
+              <span class="ml-2">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>
+              <span class="ml-2">Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+
+              </svg>
+              <span class="ml-2">Instagram</span>
+            </a>
+          </li>
+
+        </ul>
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="http://localhost:1313/technology/implementing-green-cloud-systems/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="http://localhost:1313/images/tech/green-cloud_hu_1d3cf6f96b9b9dc4.png" alt="Implementing Green Cloud Systems: A Practical Guide to Change" width="750" height="500">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-03-19T00:00:00&#43;00:00">Mar 19, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">Implementing Green Cloud Systems: A Practical Guide to Change</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while improving developer experience.</p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="http://localhost:1313/technology/quiet-always-on-dev-test-clusters-energy/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="http://localhost:1313/images/tech/quiet-home_hu_a1811995a544ba9.png" alt="Quiet, Always-On: How Development and Test Clusters Accumulate Energy Use" width="750" height="498">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-02-12T00:00:00&#43;00:00">Feb 12, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">Quiet, Always-On: How Development and Test Clusters Accumulate Energy Use</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">Development and test environments often run 24/7 despite being used only during business hours. This article explores the hidden energy costs of always-on infrastructure and practical strategies to reduce the carbon footprint of non-production workloads.</p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8"><div class="space-y-6"></div>
+
+		<div class="mt-8 space-y-4">
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-dcad58da-bc3d-4fbe-b282-b1826d9fac43" data-elfsight-app-lazy></div></div></div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="http://localhost:1313/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="mr-2 group-hover:animate-spin" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
+        </svg>
+        
+        <span class="text-2xl font-semibold uppercase">Clusters and Climate</span>
+      </a>
+
+      <p class="font-semibold">
+        When not debugging clusters or decoding currents, I wander the wild.
+      </p>
+
+      <p>👋 Hi, I'm Dr. Vivek Shilimkar. I’m a climate scientist by education and a Site Reliability Engineer by profession at Improving, where I work with Kubernetes, Rancher, and cloud-native infrastructure. I write about everything from virtual clouds to the real ones in the sky. When I’m not studying ocean currents or optimizing compute clusters, I’m usually hiking remote trails, camping by lakes, or stargazing under wide open skies.</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/about/">About</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/categories/">Categories</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2026. All rights reserved. <a href="https://insertapps.com/en/" target="_blank" rel="noopener">Insertapps.com</a></p>
+
+  </div>
+  
+</div>
+</footer><script src="/js/insertoggle.js"></script>
+</body>
+</html>
