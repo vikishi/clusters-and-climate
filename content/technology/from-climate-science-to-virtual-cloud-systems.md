@@ -8,7 +8,6 @@ categories:
 tags:
   - green-cloud
   - sustainability
-  - feature
 description: "A climate scientist’s perspective on why Green Cloud is not about offsets or slogans, but about how we design, size, and run cloud systems — and why engineering honesty matters before optimization."
 ---
 
