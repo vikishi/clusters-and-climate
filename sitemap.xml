@@ -2,13 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://clustersandclimate.com/categories/</loc>
-    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+    <loc>https://clustersandclimate.com/tags/Ai/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/tags/Cloud/</loc>
-    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
+    <loc>https://clustersandclimate.com/categories/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/Feature/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/Opinion/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/technology/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/categories/technology/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/technology/ai-assisting-writing-normalizing-the-workflow/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/Writing/</loc>
+    <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/tags/Cloud/</loc>
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Devops/</loc>
@@ -30,15 +54,6 @@
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Sustainability/</loc>
-    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/tags/</loc>
-    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/technology/</loc>
-    <lastmod>2026-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/categories/technology/</loc>
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/technology/quiet-always-on-dev-test-clusters-energy/</loc>
