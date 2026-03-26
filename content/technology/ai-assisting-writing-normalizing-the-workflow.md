@@ -1,16 +1,11 @@
 ---
 title: "The Double Standard: Why AI-Assisted Writing Should Be Normalized Like AI-Assisted Coding"
-date: 2026-03-26T10:00:00+00:00
+date: 2026-03-26
 author: Dr. Vivek Shilimkar
-image: images/tech/Gemini_Generated_Image.png
-categories:
-  - technology
-tags:
-  - ai
-  - writing
-  - opinion
-  - feature
 description: "Engineers accept AI for coding but criticize it for writing. Here's why that double standard doesn't hold up, and why the human → AI → human workflow deserves the same legitimacy."
+tags: ["ai", "writing", "opinion", "feature"]
+categories: ["technology"]
+image: "/images/tech/Gemini_Generated_Image.png"
 ---
 
 ## The Double Standard
