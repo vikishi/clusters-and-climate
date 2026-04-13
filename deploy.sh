@@ -41,7 +41,7 @@ cp -r public/* .
 echo -e "${YELLOW}📤 Deploying to master...${NC}"
 git add -A
 git commit -m "$COMMIT_MSG" || echo "No changes to commit"
-git push origin master
+git push -f origin master
 
 echo -e "${GREEN}✅ Deployment complete!${NC}"
 echo -e "${GREEN}🌐 Site will be live at https://clustersandclimate.com in a few minutes${NC}"
