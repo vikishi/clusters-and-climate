@@ -6,6 +6,7 @@ description: "The assumption that cost-optimized infrastructure is automatically
 tags: ["greencloud", "sustainability", "cloud", "carbon", "cost-optimization", "energy-efficiency"]
 categories: ["technology"]
 image: "/images/tech/cost-carbon.png"
+draft: "true"
 ---
 
 Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.

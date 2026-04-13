@@ -2,7 +2,7 @@
 title: "Super El Niño 2026: Why the Positive Indian Ocean Dipole Offers Hope Against Drought"
 date: 2026-04-13T00:00:00+05:30
 description: "Latest forecasts predict a Super El Niño event for 2026, but a concurrent positive Indian Ocean Dipole is expected to prevent the typical drought conditions over the Indian subcontinent."
-image: /images/science/super-el-nino-iod-2026.jpg
+image: /images/science/gemini_generated_super-elnino-iod.png
 categories: ["climate"]
 tags: ["El Niño", "Indian Ocean Dipole", "Monsoon", "Drought", "Climate Forecasting", "India"]
 ---
