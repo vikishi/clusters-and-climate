@@ -5,7 +5,7 @@ categories: []
 tags: ["dengue", "climate-change", "public-health", "disease-modeling", "epidemiology", "vector-borne", "tropical-disease", "predictions"]
 image: "/images/science/Aedes_Mosquito.jpg"
 description: "Recent research reveals how climate change is reshaping dengue transmission patterns, offering crucial insights for public health preparedness and disease prevention strategies."
-_build:
+build:
   list: false
   render: true
 ---

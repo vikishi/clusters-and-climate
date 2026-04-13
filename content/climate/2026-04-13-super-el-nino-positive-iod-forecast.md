@@ -38,7 +38,6 @@ Latest climate models from major forecasting centers including NOAA, the Austral
 Simultaneously, the Indian Ocean is showing strong positive IOD characteristics: (See the Indian Ocean SST anomalies)
 ![Mean sea surface temperature anomaly of August 2026](/images/science/august-tropical.png)
 
-
 - **IOD Index**: Projected to reach +1.5 to +2.0°C in August (strongly positive)
 ![IOD Index](/images/science/iod.png)
 
