@@ -3,7 +3,6 @@ title: "Cost Is Not Carbon: Why Cheap Systems Can Emit More"
 date: 2026-03-30
 author: Dr. Vivek Shilimkar
 description: "The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters."
-draft: true
 tags: ["greencloud", "sustainability", "cloud", "carbon", "cost-optimization", "energy-efficiency"]
 categories: ["technology"]
 image: "/images/tech/cost-carbon.png"
@@ -89,11 +88,9 @@ The answer is **carbon intensity** - the grams of CO₂ emitted per unit of comp
 
 These factors don't always align with cost.
 
-## Real Numbers: A Case Study
+## Putting Numbers to It
 
-Let me share concrete numbers from a project I consulted on last year.
-
-A fintech company was running machine learning training jobs. They had two options:
+To make this less abstract, consider what a typical ML training job looks like across three different cloud regions:
 
 **Virginia (us-east-1) — Cheaper**
 - Instance cost: $3.20/hour for older GPU generation
