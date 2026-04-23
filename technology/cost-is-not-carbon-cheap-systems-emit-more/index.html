@@ -35,9 +35,10 @@
 <meta property="og:title" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More">
 <meta property="og:description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters.">
 <meta property="og:url" content="http://localhost:1313/technology/cost-is-not-carbon-cheap-systems-emit-more/">
-<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="http://localhost:1313/images/tech/cost-carbon.png"><meta property="og:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="http://localhost:1313/images/tech/cost-carbon_hu_f83264958eadec20.png"><meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="655"><meta property="og:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More">
-<meta name="twitter:description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually …"><meta name="twitter:image" content="http://localhost:1313/images/tech/cost-carbon.png"><meta name="twitter:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+<meta name="twitter:description" content="The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually …"><meta name="twitter:image" content="http://localhost:1313/images/tech/cost-carbon_hu_f83264958eadec20.png"><meta name="twitter:image:alt" content="Cost Is Not Carbon: Why Cheap Systems Can Emit More"><meta name="twitter:site" content="https://x.com/DrViKiShi">
 </head>
 <body>
   <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
@@ -136,11 +137,11 @@
           
           <li class="font-semibold my-2">Dr. Vivek Shilimkar</li>
           
-          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2026-03-30T00:00:00&#43;00:00">March 30, 2026</time>
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2026-04-23T00:00:00&#43;00:00">April 23, 2026</time>
           </li>
 
           <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
-            9 min read
+            12 min read
           </li>
 
         </ul>
@@ -150,39 +151,41 @@
     </header>
 
     <figure id="featureimage" class="rounded-xl aspect-video">
+            <img class="rounded-lg" src="http://localhost:1313/images/tech/cost-carbon_hu_93808f489c22e355.png" alt="" width="750" height="409">
 
     </figure>
 
     <div id="content" class="mb-14">
-      <p>Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.</p>
-<p>This matters because most engineering organizations treat them as equivalent. Teams chase cheaper cloud regions, older instance types, and maximum discount utilization—all while assuming they&rsquo;re reducing environmental impact. The assumption is rarely questioned because cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.</p>
+      <p>This article is for teams that have recently started implementing green cloud and are new to it. Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.</p>
+<p>While implementing green cloud systems teams chase cheaper cloud regions, older instance types, and maximum discount utilization—all while assuming they&rsquo;re reducing environmental impact. The assumption is rarely questioned because cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.</p>
 <p>The result: infrastructure decisions that reduce cloud bills by 20-30% while increasing carbon emissions by similar or larger margins. The problem isn&rsquo;t malicious intent. It&rsquo;s that we optimize for what we measure, and we don&rsquo;t measure carbon.</p>
 <h2 id="the-dangerous-assumption">The Dangerous Assumption</h2>
-<p>There&rsquo;s a widely held belief in software engineering circles that if you&rsquo;re reducing cloud costs, you must also be reducing environmental impact. The logic seems sound on the surface:</p>
+<p>I think there is a widely held belief in software engineering circles that if you&rsquo;re reducing cloud costs, you must also be reducing environmental impact. The logic seems sound on the surface:</p>
 <ul>
 <li>Less money spent = fewer resources used</li>
 <li>Fewer resources = less energy consumed</li>
 <li>Less energy = lower carbon emissions</li>
 </ul>
-<p>Except that&rsquo;s not how it works in practice.</p>
-<p>I&rsquo;ve seen this assumption lead teams to make decisions that increase their carbon footprint by 30-40% while celebrating cost reductions. The problem isn&rsquo;t that teams don&rsquo;t care about the environment - it&rsquo;s that cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.</p>
+<p>Except that&rsquo;s not how it always works in practice.</p>
+<p>This assumption may lead teams to make decisions that increase their carbon footprint by 30-40% while celebrating cost reductions.</p>
 <h2 id="why-cheap-can-mean-dirty">Why Cheap Can Mean Dirty</h2>
 <p>Let me walk through the ways that cost optimization can actually increase carbon emissions.</p>
 <h3 id="1-region-shopping-based-on-price">1. Region Shopping Based on Price</h3>
 <p>Cloud providers have different prices in different regions. It&rsquo;s tempting to move workloads to cheaper regions to reduce bills. But regions have vastly different carbon intensities in their electricity grids.</p>
-<p>A colleague once moved batch processing workloads from Ireland (eu-west-1) to Ohio (us-east-2) because it was 22% cheaper. What they didn&rsquo;t know:</p>
+<p>Ohio (us-east-2) region is about 22% cheaper than Ireland (eu-west-1). Why? Because:</p>
 <ul>
 <li>Ireland&rsquo;s grid is approximately 40% renewable</li>
 <li>Ohio&rsquo;s grid is approximately 85% fossil fuels (mostly coal and natural gas)</li>
 </ul>
 <p>The carbon emissions per computation roughly doubled, even though the cost decreased. The cheaper region was powered by dirtier energy sources.</p>
+<p>Now, AWS will tell you both regions are &ldquo;100% renewable&rdquo; through their purchase of Renewable Energy Certificates. But the physical grid powering those data centers hasn&rsquo;t changed—the location-based carbon intensity remains vastly different.</p>
 <h3 id="2-older-generation-instances">2. Older Generation Instances</h3>
 <p>Older compute instances are often cheaper because they&rsquo;re being phased out. But they&rsquo;re also less energy-efficient. A five-year-old processor might consume 40-60% more power to do the same work as a modern one.</p>
-<p>I&rsquo;ve seen teams choose older instance types (t2 instead of t3, or older GPU generations) to save money. The cost savings are real - maybe 15-20% - but the energy consumption increases significantly. You&rsquo;re paying less per hour, but you&rsquo;re using more electricity per task completed.</p>
+<p>Teams might choose older instance types (t2 instead of t3, or older GPU generations) to save money. The cost savings are real - maybe 15-20% - but the energy consumption increases significantly. You&rsquo;re paying less per hour, but you&rsquo;re using more electricity per task completed.</p>
 <h3 id="3-over-provisioning-to-capture-discounts">3. Over-provisioning to Capture Discounts</h3>
 <p>Reserved instances and savings plans offer significant discounts - sometimes 50-70% off on-demand pricing. The catch is you pay upfront for capacity whether you use it or not.</p>
 <p>This creates an incentive to over-provision. Teams reserve more capacity than they need to maximize &ldquo;value.&rdquo; The result? Resources running idle, consuming power and emitting carbon, just because they were financially committed.</p>
-<p>I worked with a company that had 40% of their reserved capacity sitting idle during off-peak hours. From a cost perspective, they were already paid for, so there was no financial incentive to shut them down. From a carbon perspective, they were burning electricity for nothing.</p>
+<p>It is normal to have a 40% of the reserved capacity sitting idle during off-peak hours. From a cost perspective, they were already paid for, so there was no financial incentive to shut them down. From a carbon perspective, they were burning electricity for nothing.</p>
 <h3 id="4-spot-instances-without-efficiency-gains">4. Spot Instances Without Efficiency Gains</h3>
 <p>Spot instances can be 70-90% cheaper than on-demand. They&rsquo;re great for cost optimization and can be great for carbon optimization too - when used correctly.</p>
 <p>But here&rsquo;s what often happens: teams use spot instances without changing their architectures. They run the same workloads, just on cheaper compute. If the underlying workloads are inefficient - poorly optimized code, unnecessary processing, data fetched repeatedly - you&rsquo;re still wasting energy, you&rsquo;re just paying less for it.</p>
@@ -212,6 +215,7 @@
 <p>These factors don&rsquo;t always align with cost.</p>
 <h2 id="putting-numbers-to-it">Putting Numbers to It</h2>
 <p>To make this less abstract, consider what a typical ML training job looks like across three different cloud regions:</p>
+<p><img src="/images/tech/numbers-to-carbon.png" alt="Putting numbers to carbon emmissions and cost"></p>
 <p><strong>Virginia (us-east-1) — Cheaper</strong></p>
 <ul>
 <li>Instance cost: $3.20/hour for older GPU generation</li>
@@ -247,9 +251,15 @@
 <h3 id="1-choose-low-carbon-regions">1. Choose Low-Carbon Regions</h3>
 <p>Look up the carbon intensity of cloud regions. Major cloud providers publish this data:</p>
 <ul>
-<li>AWS has sustainability dashboards</li>
-<li>Google Cloud has carbon footprint reporting</li>
-<li>Azure publishes emissions data per region</li>
+<li><strong>AWS has sustainability dashboards</strong></li>
+</ul>
+<iframe width="650" height="366" src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/industries/approved/audio/01929-aws-sustainability-console_16x9_CC.73ef92b38ac197451a081724edd7eba0ebd409f2.mp4" title="AWS Sustainability Dashboard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<ul>
+<li><strong>Google Cloud has carbon footprint reporting</strong></li>
+</ul>
+<iframe width="650" height="366" src="https://www.youtube.com/embed/Aso72AHE8Yg" title="Google Cloud Carbon Footprint Reporting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<ul>
+<li><strong>Azure publishes emissions data per region - read more <a href="https://learn.microsoft.com/en-us/azure/carbon-optimization/overview">here</a></strong></li>
 </ul>
 <p>Prioritize regions with clean energy grids:</p>
 <ul>
@@ -300,7 +310,33 @@
 <li>Regional carbon intensity trends</li>
 <li>Progress toward reduction targets</li>
 </ul>
+<p>If you&rsquo;re running Kubernetes, there are open-source tools specifically built for tracking energy and carbon at the pod and container level:</p>
+<ul>
+<li><strong><a href="https://github.com/sustainable-computing-io/kepler">Kepler (Kubernetes-based Efficient Power Level Exporter)</a></strong> — A CNCF project that uses eBPF probes to measure real-time energy consumption per pod, container, and namespace. It exports Prometheus metrics, so it plugs directly into your existing Grafana dashboards. This is probably the most mature option for Kubernetes-native carbon visibility.</li>
+<li><strong><a href="https://github.com/kube-green/kube-green">Kube-green</a></strong> — A Kubernetes operator that automatically shuts down non-production pods during off-hours (nights, weekends). It doesn&rsquo;t measure carbon directly, but it eliminates idle workload emissions that teams forget about. Simple to deploy and effective for dev/staging clusters.</li>
+<li><strong><a href="https://www.cloudcarbonfootprint.org/">Cloud Carbon Footprint</a></strong> — An open-source tool by Thoughtworks that estimates carbon emissions from cloud usage across AWS, GCP, and Azure. It works at the billing/API level rather than the Kubernetes level, but pairs well with Kepler for a full picture—Kepler gives you pod-level granularity, CCF gives you the broader cloud account view.</li>
+<li><strong><a href="https://github.com/Azure/carbon-aware-keda-operator">Carbon Aware KEDA Scaler</a></strong> — Extends KEDA (Kubernetes Event-Driven Autoscaling) to factor in real-time grid carbon intensity when scaling workloads. It can delay or shift batch jobs to times when the grid is cleaner, automating the time-shifting strategy mentioned above.</li>
+</ul>
+<p>These tools are not just nice-to-have. Without them, carbon optimization in Kubernetes is guesswork. You can&rsquo;t optimize what you can&rsquo;t see, and most teams have zero visibility into the energy their pods actually consume.</p>
 <p>Make carbon visible the same way you make cost visible.</p>
+<h2 id="but-aws-says-its-100-renewable">&ldquo;But AWS Says It&rsquo;s 100% Renewable!&rdquo;</h2>
+<p>At this point, someone on your team will raise a fair objection: cloud providers claim their regions run on renewable energy, so does region choice even matter?</p>
+<p>AWS, for example, states that it aims to power operations with 100% renewable energy by 2025—five years ahead of its original 2030 target. As of 2023, AWS reported that 22 regions were attributable to 100% renewable energy, including high-traffic regions like US East (Virginia), US West (Oregon), Europe (Ireland), Europe (Frankfurt), Asia-Pacific (Mumbai), and others across North America, Europe, and Asia-Pacific.</p>
+<p>This sounds like the carbon question is solved. It isn&rsquo;t. Here&rsquo;s why.</p>
+<h3 id="market-based-vs-location-based-accounting">Market-Based vs. Location-Based Accounting</h3>
+<p>AWS achieves its renewable energy claims through <strong>market-based accounting</strong>. This means they contract for renewable power from utility-scale wind and solar projects, and purchase environmental attributes like <strong>Renewable Energy Certificates (RECs)</strong> and <strong>Guarantees of Origin</strong>. These are financial instruments. They don&rsquo;t change the physical electrons flowing into the data center.</p>
+<p>A data center in Virginia still draws power from the PJM grid, which is heavily reliant on natural gas and coal. AWS buying a REC from a wind farm in Texas doesn&rsquo;t change what actually powers the servers in Virginia at 2 AM on a Tuesday. It means that somewhere, an equivalent amount of renewable energy was generated—but not necessarily at the same time or place.</p>
+<p><img src="/images/tech/rec.png" alt="Renewable Energy Certificates"></p>
+<p>Under <strong>location-based accounting</strong>—which measures the actual carbon intensity of the local grid—Virginia and Oregon still have vastly different emissions profiles. The grid in Oregon (heavy hydro and wind) is physically cleaner than the grid in Virginia (natural gas dominant), regardless of what RECs AWS holds.</p>
+<h3 id="why-this-matters-for-your-decisions">Why This Matters for Your Decisions</h3>
+<p>If your organization reports emissions using location-based methods (as many do for Scope 3 reporting), the region you choose still directly impacts your reported carbon footprint. Even under market-based methods, there&rsquo;s a meaningful difference between:</p>
+<ul>
+<li>Running workloads where the grid is already clean (additionality is less needed)</li>
+<li>Running workloads on a dirty grid and offsetting with certificates from elsewhere</li>
+</ul>
+<p>The first approach reduces actual atmospheric emissions. The second is an accounting mechanism.</p>
+<p>This isn&rsquo;t to dismiss what AWS and other providers are doing—investment in renewable energy projects is genuinely valuable and drives the energy transition forward. But treating all regions as carbon-equivalent because of market-based claims can lead to the same complacency this article warns against.</p>
+<p><strong>The practical takeaway</strong>: even with cloud provider renewable energy commitments, prefer regions with cleaner local grids when you have a choice. It&rsquo;s the difference between actual decarbonization and paper decarbonization.</p>
 <h2 id="the-uncomfortable-trade-offs">The Uncomfortable Trade-offs</h2>
 <p>Sometimes optimizing for carbon does cost more money. A cleaner region might be 15% pricier. A newer instance type might not qualify for existing reserved capacity. This creates real tensions between sustainability goals and financial constraints.</p>
 <p>I don&rsquo;t have a magic answer for this. Different organizations will make different choices based on their values and constraints. But I think the first step is knowing the trade-off exists and making it explicitly rather than assuming cost optimization is good enough.</p>
@@ -458,20 +494,8 @@
 		<div class="mt-8 space-y-4">
 <div class="bg-zinc-100 p-6 rounded-2xl">
   <h3 class="font-bold text-lg mb-4">Follow Me on Twitter</h3>
-  <a class="twitter-timeline" 
-     data-width="300" 
-     data-height="400" 
-     data-theme="light"
-     data-chrome="noheader nofooter noborders"
-     href="https://twitter.com/DrViKiShi?ref_src=twsrc%5Etfw">
-     Loading tweets from @DrViKiShi...
-  </a>
+  <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/DrViKiShi?ref_src=twsrc%5Etfw">Tweets</a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <noscript>
-    <a href="https://twitter.com/DrViKiShi" target="_blank" rel="noopener">
-      Follow @DrViKiShi on Twitter
-    </a>
-  </noscript>
 </div></div></div>
 </aside>
 
