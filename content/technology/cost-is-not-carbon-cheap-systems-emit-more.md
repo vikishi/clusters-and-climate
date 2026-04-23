@@ -1,6 +1,6 @@
 ---
 title: "Cost Is Not Carbon: Why Cheap Systems Can Emit More"
-date: 2026-03-30
+date: 2026-04-23
 author: Dr. Vivek Shilimkar
 description: "The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters."
 tags: ["greencloud", "sustainability", "cloud", "carbon", "cost-optimization", "energy-efficiency"]
@@ -8,23 +8,22 @@ categories: ["technology"]
 image: "/images/tech/cost-carbon.png"
 draft: "true"
 ---
+This article is for teams that have recently started implementing green cloud and are new to it. Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.
 
-Optimizing for cost and optimizing for carbon are not the same thing. In many cases, they directly oppose each other.
-
-This matters because most engineering organizations treat them as equivalent. Teams chase cheaper cloud regions, older instance types, and maximum discount utilization—all while assuming they're reducing environmental impact. The assumption is rarely questioned because cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.
+While implementing green cloud systems teams chase cheaper cloud regions, older instance types, and maximum discount utilization—all while assuming they're reducing environmental impact. The assumption is rarely questioned because cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.
 
 The result: infrastructure decisions that reduce cloud bills by 20-30% while increasing carbon emissions by similar or larger margins. The problem isn't malicious intent. It's that we optimize for what we measure, and we don't measure carbon.
 
 ## The Dangerous Assumption
 
-There's a widely held belief in software engineering circles that if you're reducing cloud costs, you must also be reducing environmental impact. The logic seems sound on the surface:
+I think there is a widely held belief in software engineering circles that if you're reducing cloud costs, you must also be reducing environmental impact. The logic seems sound on the surface:
 - Less money spent = fewer resources used
 - Fewer resources = less energy consumed
 - Less energy = lower carbon emissions
 
-Except that's not how it works in practice.
+Except that's not how it always works in practice.
 
-I've seen this assumption lead teams to make decisions that increase their carbon footprint by 30-40% while celebrating cost reductions. The problem isn't that teams don't care about the environment - it's that cost is visible, measurable, and tied to quarterly reviews. Carbon emissions are invisible, estimated, and rarely tracked.
+This assumption may lead teams to make decisions that increase their carbon footprint by 30-40% while celebrating cost reductions.
 
 ## Why Cheap Can Mean Dirty
 
@@ -34,17 +33,19 @@ Let me walk through the ways that cost optimization can actually increase carbon
 
 Cloud providers have different prices in different regions. It's tempting to move workloads to cheaper regions to reduce bills. But regions have vastly different carbon intensities in their electricity grids.
 
-A colleague once moved batch processing workloads from Ireland (eu-west-1) to Ohio (us-east-2) because it was 22% cheaper. What they didn't know:
+Ohio (us-east-2) region is about 22% cheaper than Ireland (eu-west-1). Why? Because:
 - Ireland's grid is approximately 40% renewable
 - Ohio's grid is approximately 85% fossil fuels (mostly coal and natural gas)
 
 The carbon emissions per computation roughly doubled, even though the cost decreased. The cheaper region was powered by dirtier energy sources.
 
+Now, AWS will tell you both regions are "100% renewable" through their purchase of Renewable Energy Certificates. But the physical grid powering those data centers hasn't changed—the location-based carbon intensity remains vastly different.
+
 ### 2. Older Generation Instances
 
 Older compute instances are often cheaper because they're being phased out. But they're also less energy-efficient. A five-year-old processor might consume 40-60% more power to do the same work as a modern one.
 
-I've seen teams choose older instance types (t2 instead of t3, or older GPU generations) to save money. The cost savings are real - maybe 15-20% - but the energy consumption increases significantly. You're paying less per hour, but you're using more electricity per task completed.
+Teams might choose older instance types (t2 instead of t3, or older GPU generations) to save money. The cost savings are real - maybe 15-20% - but the energy consumption increases significantly. You're paying less per hour, but you're using more electricity per task completed.
 
 ### 3. Over-provisioning to Capture Discounts
 
@@ -52,7 +53,7 @@ Reserved instances and savings plans offer significant discounts - sometimes 50-
 
 This creates an incentive to over-provision. Teams reserve more capacity than they need to maximize "value." The result? Resources running idle, consuming power and emitting carbon, just because they were financially committed.
 
-I worked with a company that had 40% of their reserved capacity sitting idle during off-peak hours. From a cost perspective, they were already paid for, so there was no financial incentive to shut them down. From a carbon perspective, they were burning electricity for nothing.
+It is normal to have a 40% of the reserved capacity sitting idle during off-peak hours. From a cost perspective, they were already paid for, so there was no financial incentive to shut them down. From a carbon perspective, they were burning electricity for nothing.
 
 ### 4. Spot Instances Without Efficiency Gains
 
@@ -93,6 +94,8 @@ These factors don't always align with cost.
 
 To make this less abstract, consider what a typical ML training job looks like across three different cloud regions:
 
+![Putting numbers to carbon emmissions and cost](/images/tech/numbers-to-carbon.png)
+
 **Virginia (us-east-1) — Cheaper**
 - Instance cost: $3.20/hour for older GPU generation
 - Training time: 6 hours
@@ -130,9 +133,14 @@ If you want to reduce carbon emissions, not just costs, here's what to focus on:
 ### 1. Choose Low-Carbon Regions
 
 Look up the carbon intensity of cloud regions. Major cloud providers publish this data:
-- AWS has sustainability dashboards
-- Google Cloud has carbon footprint reporting
-- Azure publishes emissions data per region
+- **AWS has sustainability dashboards**
+<iframe width="650" height="366" src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/industries/approved/audio/01929-aws-sustainability-console_16x9_CC.73ef92b38ac197451a081724edd7eba0ebd409f2.mp4" title="AWS Sustainability Dashboard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- **Google Cloud has carbon footprint reporting**
+<iframe width="650" height="366" src="https://www.youtube.com/embed/Aso72AHE8Yg" title="Google Cloud Carbon Footprint Reporting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+- **Azure publishes emissions data per region - read more [here](https://learn.microsoft.com/en-us/azure/carbon-optimization/overview)**
+
 
 Prioritize regions with clean energy grids:
 - Nordic countries (hydro, wind, nuclear)
@@ -187,7 +195,47 @@ What gets measured gets managed. Add carbon tracking to your dashboards:
 - Regional carbon intensity trends
 - Progress toward reduction targets
 
+If you're running Kubernetes, there are open-source tools specifically built for tracking energy and carbon at the pod and container level:
+
+- **[Kepler (Kubernetes-based Efficient Power Level Exporter)](https://github.com/sustainable-computing-io/kepler)** — A CNCF project that uses eBPF probes to measure real-time energy consumption per pod, container, and namespace. It exports Prometheus metrics, so it plugs directly into your existing Grafana dashboards. This is probably the most mature option for Kubernetes-native carbon visibility.
+- **[Kube-green](https://github.com/kube-green/kube-green)** — A Kubernetes operator that automatically shuts down non-production pods during off-hours (nights, weekends). It doesn't measure carbon directly, but it eliminates idle workload emissions that teams forget about. Simple to deploy and effective for dev/staging clusters.
+- **[Cloud Carbon Footprint](https://www.cloudcarbonfootprint.org/)** — An open-source tool by Thoughtworks that estimates carbon emissions from cloud usage across AWS, GCP, and Azure. It works at the billing/API level rather than the Kubernetes level, but pairs well with Kepler for a full picture—Kepler gives you pod-level granularity, CCF gives you the broader cloud account view.
+- **[Carbon Aware KEDA Scaler](https://github.com/Azure/carbon-aware-keda-operator)** — Extends KEDA (Kubernetes Event-Driven Autoscaling) to factor in real-time grid carbon intensity when scaling workloads. It can delay or shift batch jobs to times when the grid is cleaner, automating the time-shifting strategy mentioned above.
+
+These tools are not just nice-to-have. Without them, carbon optimization in Kubernetes is guesswork. You can't optimize what you can't see, and most teams have zero visibility into the energy their pods actually consume.
+
 Make carbon visible the same way you make cost visible.
+
+## "But AWS Says It's 100% Renewable!"
+
+At this point, someone on your team will raise a fair objection: cloud providers claim their regions run on renewable energy, so does region choice even matter?
+
+AWS, for example, states that it aims to power operations with 100% renewable energy by 2025—five years ahead of its original 2030 target. As of 2023, AWS reported that 22 regions were attributable to 100% renewable energy, including high-traffic regions like US East (Virginia), US West (Oregon), Europe (Ireland), Europe (Frankfurt), Asia-Pacific (Mumbai), and others across North America, Europe, and Asia-Pacific.
+
+This sounds like the carbon question is solved. It isn't. Here's why.
+
+### Market-Based vs. Location-Based Accounting
+
+AWS achieves its renewable energy claims through **market-based accounting**. This means they contract for renewable power from utility-scale wind and solar projects, and purchase environmental attributes like **Renewable Energy Certificates (RECs)** and **Guarantees of Origin**. These are financial instruments. They don't change the physical electrons flowing into the data center.
+
+A data center in Virginia still draws power from the PJM grid, which is heavily reliant on natural gas and coal. AWS buying a REC from a wind farm in Texas doesn't change what actually powers the servers in Virginia at 2 AM on a Tuesday. It means that somewhere, an equivalent amount of renewable energy was generated—but not necessarily at the same time or place.
+
+![Renewable Energy Certificates](/images/tech/rec.png)
+
+Under **location-based accounting**—which measures the actual carbon intensity of the local grid—Virginia and Oregon still have vastly different emissions profiles. The grid in Oregon (heavy hydro and wind) is physically cleaner than the grid in Virginia (natural gas dominant), regardless of what RECs AWS holds.
+
+### Why This Matters for Your Decisions
+
+If your organization reports emissions using location-based methods (as many do for Scope 3 reporting), the region you choose still directly impacts your reported carbon footprint. Even under market-based methods, there's a meaningful difference between:
+
+- Running workloads where the grid is already clean (additionality is less needed)
+- Running workloads on a dirty grid and offsetting with certificates from elsewhere
+
+The first approach reduces actual atmospheric emissions. The second is an accounting mechanism.
+
+This isn't to dismiss what AWS and other providers are doing—investment in renewable energy projects is genuinely valuable and drives the energy transition forward. But treating all regions as carbon-equivalent because of market-based claims can lead to the same complacency this article warns against.
+
+**The practical takeaway**: even with cloud provider renewable energy commitments, prefer regions with cleaner local grids when you have a choice. It's the difference between actual decarbonization and paper decarbonization.
 
 ## The Uncomfortable Trade-offs
 
