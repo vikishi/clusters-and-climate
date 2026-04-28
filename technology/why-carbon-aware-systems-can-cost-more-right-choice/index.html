@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice | Clusters and Climate</title>
+
+<meta name="description" content="Carbon-aware infrastructure sometimes costs more than the cheapest alternative. This article explains why that premium is not wasted money — it&#39;s a hedge against regulatory risk, a reduction in technical carbon debt, and often, a better engineering decision.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="https://clustersandclimate.com/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://clustersandclimate.com/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://clustersandclimate.com/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://clustersandclimate.com/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://clustersandclimate.com/favicon-64.png"> 
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-W43KWS3B37"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W43KWS3B37');
+        }
+      </script><meta property="og:type" content="article">
+<meta property="og:title" content="Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice">
+<meta property="og:description" content="Carbon-aware infrastructure sometimes costs more than the cheapest alternative. This article explains why that premium is not wasted money — it&#39;s a hedge against regulatory risk, a reduction in technical carbon debt, and often, a better engineering decision.">
+<meta property="og:url" content="https://clustersandclimate.com/technology/why-carbon-aware-systems-can-cost-more-right-choice/">
+<meta property="og:site_name" content="Clusters and Climate"><meta property="og:image" content="https://clustersandclimate.com/images/tech/carbon-aware-cost.png"><meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630"><meta property="og:image:alt" content="Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice"><meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice">
+<meta name="twitter:description" content="Carbon-aware infrastructure sometimes costs more than the cheapest alternative. This article explains why that premium is not wasted money — it&#39;s a hedge against regulatory risk, a reduction in …"><meta name="twitter:image" content="https://clustersandclimate.com/images/tech/carbon-aware-cost.png"><meta name="twitter:image:alt" content="Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice"><meta name="twitter:site" content="https://x.com/DrViKiShi">
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full p-1.5">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-spin bi bi-egg-fried fill-white" viewBox="0 0 16 16">
+						<path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+						<path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"></path>
+					</svg>
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://clustersandclimate.com/">Clusters and Climate</a></h2>
+			</div>		<div class="flex items-center flex-wrap mx-2" style="gap: 6px;"><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/climate/">
+						Climate
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/diary/">
+						Diary
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/life/">
+						Life
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/outdoor/">
+						Outdoor
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/science/">
+						Science
+					</a><a class="px-4 py-1.5 text-sm font-semibold text-black bg-zinc-100 rounded-full hover:bg-zinc-200 transition-all" href="https://clustersandclimate.com/technology/">
+						Technology
+					</a></div>		</div>
+		<div class="flex items-center ml-auto">
+			<button class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/about/">About</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/categories/">Categories</a>
+    </li>
+    </ul>
+  </nav>
+<div id="search-bar" class="block mt-3 close">
+	<form id="search" class="flex items-stretch">
+		<input class="w-full block px-6 py-2 rounded-l-full focus:outline-none border border-zinc-200" type="text" placeholder="Search...">
+		<button class="flex items-center px-7 py-2.5 rounded-r-full border border-zinc-200 ">
+			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="group-hover:animate-pulse" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+			</svg>
+		</button>
+	</form>
+</div>
+</div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://clustersandclimate.com/">Clusters and Climate</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://clustersandclimate.com/technology/">Technologies</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold">Carbon-aware infrastructure sometimes costs more than the cheapest alternative. This article explains why that premium is not wasted money — it&#39;s a hedge against regulatory risk, a reduction in technical carbon debt, and often, a better engineering decision. </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://clustersandclimate.com/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar avatar" width="734" height="734">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">Dr. Vivek Shilimkar</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2026-04-23T00:00:00&#43;00:00">April 23, 2026</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            13 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+    <figure id="featureimage" class="rounded-xl aspect-video">
+            <img class="rounded-lg" src="https://clustersandclimate.com/images/tech/carbon-aware-cost_hu_da3a8e553c7a7ce4.png" alt="" width="750" height="394">
+
+    </figure>
+
+    <div id="content" class="mb-14">
+      <p>In the previous article, I made the case that cost and carbon are not the same thing — that cheap cloud infrastructure can emit significantly more carbon than slightly more expensive alternatives. The response I got from several readers and colleagues was some version of the same question:</p>
+<p><em>&ldquo;Okay, I understand they&rsquo;re different. But my budget is real. My sustainability goals are aspirational. When the two conflict, cost wins. Every time.&rdquo;</em></p>
+<p>I get it. I completely understand the argument that the quarterly cloud bill matters more than an annual sustainability report. I am sure, well-intentioned carbon reduction initiatives will get shelved the moment someone pointed out they&rsquo;d increase infrastructure spend by 12%.</p>
+<p>But I think this framing — carbon vs. cost, idealism vs. pragmatism — is incomplete. It assumes that the only value of carbon-aware infrastructure is environmental, and that any cost premium is essentially a charitable donation to the planet. That&rsquo;s not the case always.</p>
+<p>Carbon-aware systems can cost more and still be the right choice — not just ethically, but strategically, technically, and increasingly, financially.</p>
+<h2 id="the-carbon-premium-is-real--lets-not-pretend-otherwise">The Carbon Premium Is Real — Let&rsquo;s Not Pretend Otherwise</h2>
+<p>Before making the case for paying more, I want to be honest about what &ldquo;more&rdquo; looks like. Carbon-aware decisions do sometimes come with a cost premium.</p>
+<p>Running workloads in a Nordic region with a clean energy grid might cost 10-20% more than a coal-heavy region in another part of the world. Choosing newer, energy-efficient instance types over older discounted ones can add 15-25% to your compute bill. Time-shifting batch jobs to align with low-carbon windows might require architectural changes that take engineering time to implement.</p>
+<p>These costs are real. I&rsquo;m not going to argue that they don&rsquo;t exist or that they&rsquo;re always offset by hidden savings. Sometimes you will pay more for lower-carbon infrastructure. The question isn&rsquo;t whether the premium exists — it&rsquo;s whether that premium buys you something beyond a feel-good metric.</p>
+<p>It does.</p>
+<h2 id="what-the-carbon-premium-actually-buys-you">What the Carbon Premium Actually Buys You</h2>
+<h3 id="1-a-hedge-against-carbon-regulation">1. A Hedge Against Carbon Regulation</h3>
+<p>Carbon pricing is no longer a distant policy proposal. It&rsquo;s active legislation in many parts of the world, and it&rsquo;s expanding.</p>
+<p>The <strong>EU Carbon Border Adjustment Mechanism (CBAM)</strong> began its transitional phase in 2023 and enters full enforcement in 2026. It requires importers to pay for the carbon embedded in goods entering the EU. While CBAM currently targets physical goods like steel, cement, and electricity, the EU has signaled intent to expand its scope. Digital services and cloud infrastructure are on the horizon.</p>
+<p>The <strong>EU Corporate Sustainability Reporting Directive (CSRD)</strong>, effective from 2024, requires large companies — including many technology firms — to disclose detailed environmental data, including Scope 3 emissions. Your cloud infrastructure emissions fall squarely into Scope 3. This isn&rsquo;t optional reporting; it&rsquo;s audited disclosure with financial penalties for non-compliance.</p>
+<p>In the United States, the <strong>SEC&rsquo;s climate disclosure rules</strong> (adopted in 2024, with phased implementation) require publicly traded companies to report material climate-related risks, including greenhouse gas emissions. California&rsquo;s <strong>Climate Corporate Data Accountability Act</strong> goes further, requiring companies with revenue over $1 billion to disclose Scope 1, 2, and 3 emissions.</p>
+<p>Several countries — Canada, the UK, Japan, South Korea — are implementing or expanding carbon pricing mechanisms that will eventually touch digital infrastructure.</p>
+<p>Here&rsquo;s what this means practically: if your organization is currently running workloads on high-carbon infrastructure because it&rsquo;s cheaper, you&rsquo;re accumulating regulatory exposure. When carbon pricing reaches cloud infrastructure — and the trajectory strongly suggests it will — the &ldquo;cheap&rdquo; regions become expensive overnight. Not because the cloud provider raised prices, but because your organization now owes a carbon tax on top of the compute cost.</p>
+<p>Organizations that invest in carbon-aware infrastructure today are not paying a premium. They&rsquo;re buying insurance against a regulatory future that&rsquo;s arriving faster than most IT budgets account for.</p>
+<h3 id="2-reduced-carbon-debt">2. Reduced Carbon Debt</h3>
+<p>In software engineering, we understand technical debt well. You make a shortcut today — skip the tests, hardcode the config, copy-paste the function — and it works fine for now. But the cost compounds. Eventually, you spend more fixing the debt than you would have spent doing it right in the first place.</p>
+<p>Carbon debt works the same way.</p>
+<p>Every month you run workloads on high-carbon infrastructure because it&rsquo;s cheaper, you&rsquo;re accumulating emissions that your organization will eventually need to account for. Maybe through offsets, maybe through regulatory compliance, maybe through customer pressure, maybe through all three.</p>
+<p>The longer you run carbon-intensive infrastructure, the larger your cumulative emissions become, and the more expensive it gets to address them later. Carbon offsets — the most common retroactive solution — are getting more expensive every year. In 2020, high-quality carbon offsets cost around $5-10 per ton of CO₂. By 2025, prices for credible offsets have risen to $30-80 per ton, and projections suggest $100+ per ton by 2030.</p>
+<p>Consider a mid-sized engineering organization running 200 compute instances across three regions. If the cheapest region emits 400 gCO₂/kWh more than a cleaner alternative, and each instance consumes an average of 200W, that&rsquo;s roughly:</p>
+<ul>
+<li><strong>200 instances × 0.2 kW × 8,760 hours/year × 0.4 kgCO₂/kWh = ~140 tons CO₂/year</strong></li>
+</ul>
+<p>At current offset prices ($50/ton), that&rsquo;s $7,000/year. At projected 2030 prices ($100/ton), it&rsquo;s $14,000/year. And that&rsquo;s just the offset cost — it doesn&rsquo;t include the compliance reporting overhead, the audit costs, or the reputational risk.</p>
+<p>Now compare that to the actual cost premium of running in a cleaner region — maybe $15,000-20,000/year more in compute costs. The gap between &ldquo;cheap and dirty&rdquo; and &ldquo;slightly more expensive and clean&rdquo; narrows every year as carbon costs rise. For many organizations, the crossover point — where the carbon-aware option becomes cheaper on a total-cost basis — is already here or approaching fast.</p>
+<p>Paying the carbon premium now is like paying down technical debt before it compounds. It&rsquo;s more expensive than doing nothing today, but cheaper than dealing with the consequences tomorrow.</p>
+<h3 id="3-better-hardware-better-performance">3. Better Hardware, Better Performance</h3>
+<p>Here&rsquo;s something that gets lost in the cost-vs-carbon framing: carbon-aware choices often align with better engineering decisions.</p>
+<p>Choosing newer, energy-efficient instance types doesn&rsquo;t just reduce carbon — it gives you faster processors, better memory bandwidth, improved network performance, and lower latency. ARM-based instances like AWS Graviton3 or Azure Cobalt consume significantly less power per computation while often outperforming their x86 equivalents on many workloads.</p>
+<p>In the previous article, I showed how an ML training job in Oregon (us-west-2) on newer GPUs completed faster, cost less overall, and emitted far less carbon than the same job on older GPUs in Virginia. The carbon-aware choice was also the performance-optimal choice.</p>
+<p>This isn&rsquo;t always the case, but it&rsquo;s common enough to challenge the assumption that carbon-aware means slower or less capable. Modern, efficient hardware tends to be both greener and faster. The premium you pay per hour is often offset by shorter execution times.</p>
+<p>When you frame the decision as &ldquo;pay 20% more per hour for a worse outcome,&rdquo; it sounds like a bad deal. When you frame it as &ldquo;pay 20% more per hour but finish 40% faster with better results,&rdquo; the economics shift entirely.</p>
+<h3 id="4-customer-and-talent-expectations">4. Customer and Talent Expectations</h3>
+<p>This is the factor that&rsquo;s hardest to put a dollar figure on, but it&rsquo;s becoming impossible to ignore.</p>
+<p>Enterprise customers increasingly require sustainability data from their vendors. RFPs now routinely include questions about carbon footprint, environmental certifications, and sustainability practices. Government procurement — especially in the EU and parts of Asia — is beginning to include carbon criteria in vendor evaluation.</p>
+<p>If your competitors can demonstrate lower carbon intensity for their cloud operations and you can&rsquo;t, that&rsquo;s a competitive disadvantage that doesn&rsquo;t show up in your infrastructure budget but absolutely shows up in your revenue pipeline.</p>
+<p>On the talent side, engineers — particularly younger engineers entering the workforce — care about this. Not all of them, and not always as a deciding factor, but enough to matter for retention and recruitment. A company that can credibly say &ldquo;we run carbon-aware infrastructure and here&rsquo;s how&rdquo; has a meaningful advantage over one that says &ldquo;we optimize for cost and hope sustainability takes care of itself.&rdquo;</p>
+<h3 id="5-resilience-through-diversity">5. Resilience Through Diversity</h3>
+<p>Carbon-aware architecture often requires distributing workloads across multiple regions based on grid carbon intensity, time-shifting batch processing, and designing for flexibility in where and when computation happens.</p>
+<p>These are the same architectural patterns that improve resilience against outages, reduce latency for global users, and protect against regional pricing changes. A system designed to shift workloads based on carbon signals can also shift workloads based on availability signals or cost signals.</p>
+<p>The investment in carbon-aware flexibility is also an investment in operational resilience. You&rsquo;re not paying a premium for carbon alone — you&rsquo;re paying for an architecture that&rsquo;s more adaptable to multiple kinds of disruption.</p>
+<h2 id="the-total-cost-of-ownership-argument">The Total Cost of Ownership Argument</h2>
+<p>Traditional cloud cost optimization looks at a narrow set of variables: compute cost per hour, storage cost per GB, network egress charges. The goal is to minimize the sum of these direct costs.</p>
+<p>But total cost of ownership (TCO) for cloud infrastructure should include:</p>
+<ul>
+<li><strong>Direct compute and storage costs</strong> (what we usually optimize for)</li>
+<li><strong>Regulatory compliance costs</strong> (reporting, auditing, potential carbon taxes)</li>
+<li><strong>Offset and remediation costs</strong> (if your organization commits to net-zero)</li>
+<li><strong>Opportunity costs</strong> (lost contracts due to sustainability gaps)</li>
+<li><strong>Architecture evolution costs</strong> (retrofitting carbon-awareness later vs. building it in now)</li>
+<li><strong>Reputational risk</strong> (increasingly quantifiable through ESG ratings)</li>
+</ul>
+<p>When you include all of these in the TCO calculation, the &ldquo;cheap but dirty&rdquo; option frequently loses to the &ldquo;slightly more expensive but clean&rdquo; option. The problem is that most infrastructure cost analyses don&rsquo;t include these factors. They optimize for a partial picture and call it comprehensive.</p>
+<p><img src="/images/tech/tco-carbon-aware.png" alt="Total Cost of Ownership - Carbon Aware"></p>
+<p>I&rsquo;m not suggesting every team needs to build a full TCO model before choosing a cloud region. But if your organization has sustainability commitments, carbon reduction targets, or operates in regulated markets, ignoring the broader cost picture is a financial risk, not a cost saving.</p>
+<h2 id="when-carbon-aware-choices-save-money-too">When Carbon-Aware Choices Save Money Too</h2>
+<p>I&rsquo;ve been making the case for paying more, but it&rsquo;s worth noting that carbon-aware decisions sometimes cost the same or less. Here are the most common scenarios:</p>
+<p><strong>Time-shifting batch workloads</strong>: Running heavy computation during off-peak hours when the grid is cleaner often coincides with lower electricity costs for the cloud provider, which can translate to lower spot instance prices. You&rsquo;re not paying more — you&rsquo;re paying differently.</p>
+<p><strong>Right-sizing with efficient instances</strong>: Moving from over-provisioned older instances to right-sized modern ones reduces both energy consumption and cost. This is the rare win-win that teams should pursue aggressively.</p>
+<p><strong>Shutting down idle resources</strong>: As I discussed earlier in this series, non-production environments running 24/7 waste both money and energy. Turning them off during idle periods saves cost and carbon simultaneously.</p>
+<p><strong>Consolidating workloads</strong>: Higher utilization per instance means fewer total instances, which means lower cost and lower energy consumption. Consolidation is almost always both cheaper and greener.</p>
+<p><strong>Serverless for sporadic workloads</strong>: Functions-as-a-service consume zero resources when idle. For bursty, low-frequency workloads, serverless is both the cheapest and the lowest-carbon option.</p>
+<p>These aren&rsquo;t hypothetical — they&rsquo;re patterns I&rsquo;ve seen reduce both cost and carbon by 30-50% when implemented together. Start with these before tackling the harder trade-offs where carbon-aware choices cost more.</p>
+<h2 id="a-framework-for-making-carbon-cost-decisions">A Framework for Making Carbon-Cost Decisions</h2>
+<p>Not every decision needs to be agonized over. Here&rsquo;s a practical framework for evaluating carbon-aware options:</p>
+<p><strong>Tier 1: No trade-off required (do these immediately)</strong></p>
+<ul>
+<li>Right-size instances to efficient modern types</li>
+<li>Shut down idle non-production resources</li>
+<li>Consolidate under-utilized workloads</li>
+<li>Use serverless for appropriate workloads</li>
+</ul>
+<p>These reduce both cost and carbon. There&rsquo;s no reason not to do them.</p>
+<p><strong>Tier 2: Small premium, large carbon benefit (do these next)</strong></p>
+<ul>
+<li>Choose cleaner regions when the cost difference is less than 15%</li>
+<li>Use ARM-based instances where workloads are compatible</li>
+<li>Implement basic time-shifting for batch jobs</li>
+</ul>
+<p>The cost premium is modest and the carbon reduction is significant. For most organizations, this is easily justifiable.</p>
+<p><strong>Tier 3: Meaningful premium, strategic value (evaluate case by case)</strong></p>
+<ul>
+<li>Redesign architectures for multi-region carbon-aware scheduling</li>
+<li>Move production workloads to cleaner but more expensive regions</li>
+<li>Invest in carbon monitoring and optimization tooling</li>
+</ul>
+<p>These require organizational buy-in and budget allocation. Evaluate them based on your organization&rsquo;s sustainability commitments, regulatory exposure, and competitive landscape.</p>
+<p><strong>Tier 4: High premium, long-term positioning (plan for these)</strong></p>
+<ul>
+<li>Carbon-neutral or carbon-negative infrastructure targets</li>
+<li>Real-time carbon-aware autoscaling across regions</li>
+<li>Investing in on-site renewable energy or direct power purchase agreements</li>
+</ul>
+<p>These are strategic investments that make sense for organizations with strong sustainability mandates or those operating in markets where carbon regulation is imminent.</p>
+<h2 id="how-to-build-the-internal-case">How to Build the Internal Case</h2>
+<p>If you&rsquo;re an engineer or architect who sees the value but needs to convince leadership, here&rsquo;s what I&rsquo;ve seen work:</p>
+<p><strong>Lead with the numbers, not the narrative.</strong> &ldquo;We can reduce our Scope 3 cloud emissions by 60% with a 12% increase in compute spend&rdquo; is more persuasive than &ldquo;we should be more sustainable.&rdquo; Decision-makers respond to quantified trade-offs.</p>
+<p><strong>Connect to existing commitments.</strong> If your organization has published sustainability targets, net-zero pledges, or ESG commitments, carbon-aware infrastructure is a concrete path to delivering on those promises. It&rsquo;s harder to dismiss a proposal that directly supports commitments the CEO already made in the annual report.</p>
+<p><strong>Start with Tier 1.</strong> Demonstrate that the first round of changes saves both cost and carbon. Once you&rsquo;ve shown that green infrastructure isn&rsquo;t inherently expensive, the conversation about paying a premium for Tier 2 and 3 becomes much easier.</p>
+<p><strong>Quantify the regulatory risk.</strong> Map out the carbon regulations affecting your markets, estimate potential compliance costs, and show how current infrastructure decisions create future exposure. Nothing gets budget approved faster than risk mitigation.</p>
+<p><strong>Frame it as architecture modernization.</strong> Many carbon-aware changes — newer instance types, better autoscaling, multi-region design — are also modernization improvements. Package them together and the carbon benefit becomes a bonus rather than the primary justification.</p>
+<h2 id="what-im-not-saying">What I&rsquo;m Not Saying</h2>
+<p>I want to be clear about what this article is not arguing:</p>
+<p>I&rsquo;m not saying every organization should maximize carbon reduction regardless of cost. Budget constraints are real, and some organizations genuinely cannot afford significant premiums on infrastructure.</p>
+<p>I&rsquo;m not saying carbon-aware infrastructure is always more expensive. As I&rsquo;ve shown, many changes reduce both cost and carbon.</p>
+<p>I&rsquo;m not saying cost optimization is wrong. It&rsquo;s essential. But it&rsquo;s incomplete as the sole optimization target.</p>
+<p>And I&rsquo;m not saying that individual engineering teams should bear the full burden of these decisions. Carbon-aware infrastructure requires organizational commitment — budget allocation, metric tracking, and leadership support.</p>
+<p>What I am saying is that when carbon-aware choices cost more, that cost is not wasted. It buys regulatory preparedness, reduced carbon debt, better hardware, competitive positioning, and architectural resilience. Whether the premium is worth it depends on your organization&rsquo;s specific context — but the decision should be made with full information, not defaulted to &ldquo;cheapest wins.&rdquo;</p>
+<h2 id="the-trajectory-is-clear">The Trajectory Is Clear</h2>
+<p>Every signal points in the same direction: carbon is becoming a priced externality. Regulations are tightening. Reporting requirements are expanding. Customer expectations are rising. Offset costs are increasing.</p>
+<p>Organizations that build carbon-aware infrastructure now are positioning themselves ahead of this curve. They&rsquo;re paying a modest premium today to avoid a steep premium tomorrow. They&rsquo;re making engineering decisions that happen to also be good sustainability decisions.</p>
+<p>The teams that wait — that continue optimizing solely for cost and plan to &ldquo;deal with carbon later&rdquo; — will eventually face the same transition, but under time pressure, regulatory deadlines, and higher costs.</p>
+<p>In climate science, we have a concept for this: the cost of delayed action. Every year of delay in reducing emissions doesn&rsquo;t just maintain the problem — it makes the eventual solution more expensive and more disruptive. The same principle applies to cloud infrastructure. The carbon-aware transition is coming for every organization. The only question is whether you lead it or react to it.</p>
+<p>The carbon premium isn&rsquo;t a tax on doing the right thing. It&rsquo;s an investment in doing the smart thing — before the market forces everyone&rsquo;s hand.</p>
+<hr>
+<p><em>This article is part of a series on Green Cloud Systems. Earlier articles covered why green cloud matters, the hidden energy cost of always-on dev/test clusters, practical implementation strategies, cost-aware architecture patterns, and why cost optimization alone doesn&rsquo;t reduce carbon. Each article builds on the previous — if you&rsquo;re just joining the series, I&rsquo;d recommend starting from the beginning.</em></p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Greencloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Greencloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Sustainability/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Sustainability</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Cloud/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Cloud</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Carbon/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Carbon</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Cost-Optimization/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Cost-Optimization</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Energy-Efficiency/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Energy-Efficiency</a></li>
+        <li><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/Carbon-Aware/" lang="mr" style="font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif; unicode-bidi: isolate;">Carbon-Aware</a></li>
+    </ul>
+</div>
+
+    <footer id="content-footer" class="not-prose">
+
+      <div id="comment" class="border p-8 bg-zinc-100 rounded-2xl">
+
+        <h2 class="text-xl font-semibold mb-4">Comments</h2>
+
+        <script src="https://giscus.app/client.js"
+                data-repo="vivek-shilimkar/clusters-and-climate"
+                data-repo-id="R_kgDONhx8ng"
+                data-category="General"
+                data-category-id="DIC_kwDONhx8ns4Clb8B"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+      </div>
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/images/vivek-2.jpg" alt="Dr. Vivek Shilimkar">
+
+        <h2 class="text-xl font-bold my-4">Written by : Dr. Vivek Shilimkar</h2>
+
+        <p class="mb-4">Cloud Engineer | Climate Scientist | Green Cloud Advocate | Nature Enthusiast | Science Communicator</p>
+
+        <ul class="flex flex-wrap space-x-4">
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg>
+              <span class="ml-2">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>
+              <span class="ml-2">Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center decoration-auto hover:underline" href="https://facebook.com/#" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+
+              </svg>
+              <span class="ml-2">Instagram</span>
+            </a>
+          </li>
+
+        </ul>
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://clustersandclimate.com/technology/cost-is-not-carbon-cheap-systems-emit-more/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/cost-carbon_hu_93808f489c22e355.png" alt="Cost Is Not Carbon: Why Cheap Systems Can Emit More" width="750" height="409">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-04-23T00:00:00&#43;00:00">Apr 23, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">Cost Is Not Carbon: Why Cheap Systems Can Emit More</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">The assumption that cost-optimized infrastructure is automatically carbon-efficient is dangerously wrong. Discover why cheap cloud resources can emit more carbon and how to optimize for what actually matters.</p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://clustersandclimate.com/technology/implementing-green-cloud-systems/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="https://clustersandclimate.com/images/tech/green-cloud_hu_1d3cf6f96b9b9dc4.png" alt="Implementing Green Cloud Systems: A Practical Guide to Change" width="750" height="500">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2026-03-19T00:00:00&#43;00:00">Mar 19, 2026</time>
+
+		<h3 class="my-4 text-2xl font-bold">Implementing Green Cloud Systems: A Practical Guide to Change</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">A step-by-step guide to implementing energy-efficient cloud infrastructure practices without disrupting development workflows. Learn how to reduce non-production infrastructure costs by 50-70% while improving developer experience.</p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8"><div class="space-y-6"></div>
+
+		<div class="mt-8 space-y-4">
+<div class="bg-zinc-100 p-6 rounded-2xl">
+  <h3 class="font-bold text-lg mb-4">Follow Me on Twitter</h3>
+  <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/DrViKiShi?ref_src=twsrc%5Etfw">Tweets</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></div></div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://clustersandclimate.com/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="mr-2 group-hover:animate-spin" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
+        </svg>
+        
+        <span class="text-2xl font-semibold uppercase">Clusters and Climate</span>
+      </a>
+
+      <p class="font-semibold">
+        When not debugging clusters or decoding currents, I wander the wild.
+      </p>
+
+      <p>👋 Hi, I'm Dr. Vivek Shilimkar. I’m a climate scientist by education and a Site Reliability Engineer by profession at Improving, where I work with Kubernetes, Rancher, and cloud-native infrastructure. I write about everything from virtual clouds to the real ones in the sky. When I’m not studying ocean currents or optimizing compute clusters, I’m usually hiking remote trails, camping by lakes, or stargazing under wide open skies.</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/about/">About</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/categories/">Categories</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2026. All rights reserved. <a href="https://insertapps.com/en/" target="_blank" rel="noopener">Insertapps.com</a></p>
+
+  </div>
+  
+</div>
+</footer><script src="/js/insertoggle.js"></script>
+</body>
+</html>
