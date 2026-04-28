@@ -271,6 +271,8 @@ So next time someone celebrates moving to cheaper instances or regions, ask the 
 
 The answer might be uncomfortable. But it's a question worth asking.
 
+In the next article we will see "_Why Carbon-Aware Systems Can Cost More and Still Be the Right Choice_"
+
 ---
 
 *Note: The numbers in this article are illustrative examples based on typical scenarios. Actual carbon intensities vary by region, time of day, and grid composition. For precise calculations for your infrastructure, use cloud provider carbon reporting tools and regional grid data.*
