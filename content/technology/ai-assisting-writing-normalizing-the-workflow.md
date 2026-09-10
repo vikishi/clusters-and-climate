@@ -6,7 +6,6 @@ image: images/tech/Gemini_Generated_Image.png
 categories:
   - technology
 tags:
-  - feature
   - ai
   - writing
   - opinion
