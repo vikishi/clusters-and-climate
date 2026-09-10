@@ -11,7 +11,7 @@ tags:
   - jog-falls
 slug: /coastal-karnataka-yana-gokarna-murudeshwar-jog-falls/
 description: "A 4-day bus trip from Pune through Yana Caves, Gokarna, Murudeshwar, Honnavar's mangroves and Jog Falls — full itinerary, photos and what I'd do differently."
-image: /images/outdoor/coastal-karnataka/honnavar-mangroves.jpg
+image: /images/outdoor/coastal-karnataka/honnavar-mangroves-2.jpg
 ---
 
 The bus pulled out of Pune at 8:00 PM on the 4th of September, thirty-two of us packed in with backpacks, pillows, and the particular restlessness that comes before a trip you've been looking forward to for weeks. Over the next two days we walked into a limestone cave hidden inside basalt hills, watched the sun drop into the Arabian Sea at Gokarna, stood under a 123-foot Shiva at Murudeshwar, crossed a mangrove boardwalk in Honnavar, and stared down four waterfalls falling in unison at Jog. This is that trip — where we went, when, and what I'd change if I did it again.
@@ -113,8 +113,8 @@ The temple itself is old — local tradition ties Murudeshwar into the same Atma
 6. **11:10–11:45 AM** — drove to Honnavar for the mangrove boardwalk.
 7. **Honnavar mangrove boardwalk**, about an hour.
 
-![Honnavar mangroves](/images/outdoor/coastal-karnataka/honnavar-mangroves.jpg)
-<p style="text-align:center;"><em>The mangrove boardwalk at Honnavar</em></p>
+![Honnavar mangroves](/images/outdoor/coastal-karnataka/honnavar-mangroves-2.jpg)
+<p style="text-align:center;"><em>At the entrance to the Honnavar mangrove boardwalk</em></p>
 
 *Another aside, since I spend my working life thinking about this stuff:* mangroves like these, along the Sharavathi estuary, punch far above their weight ecologically. Acre for acre, mangrove soil stores several times more carbon than a tropical rainforest — mostly locked in waterlogged sediment where it barely decomposes, sometimes for centuries, which is why scientists file it under "blue carbon" alongside seagrass meadows and salt marshes. They're also the coast's shock absorber: that tangle of roots you walk over on the boardwalk breaks the force of storm surges and cyclone winds before they reach the villages behind them, and it's a nursery for the fish and crab larvae that the entire local fishing economy quietly depends on. None of that is visible from the boardwalk in the way a waterfall or a temple gopuram is — it just looks like a quiet walk through the trees — but it's arguably doing more heavy lifting for the region than anything else on this itinerary.
 
