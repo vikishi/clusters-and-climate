@@ -14,7 +14,7 @@ description: "A 4-day bus trip from Pune through Yana Caves, Gokarna, Murudeshwa
 image: /images/outdoor/coastal-karnataka/honnavar-mangroves.jpg
 ---
 
-The bus pulled out of Pune at 8:00 PM on the 4th of September, thirty-two of us packed in with backpacks, pillows, and the particular restlessness that comes before a trip you've been looking forward to for weeks. Twenty four hours later we'd have walked into a limestone cave hidden inside basalt hills, watched the sun drop into the Arabian Sea at Gokarna, stood under a sixty-foot Shiva at Murudeshwar, crossed a mangrove boardwalk in Honnavar, and stared down four waterfalls falling in unison at Jog. This is that trip — where we went, when, and what I'd change if I did it again.
+The bus pulled out of Pune at 8:00 PM on the 4th of September, thirty-two of us packed in with backpacks, pillows, and the particular restlessness that comes before a trip you've been looking forward to for weeks. Over the next two days we walked into a limestone cave hidden inside basalt hills, watched the sun drop into the Arabian Sea at Gokarna, stood under a 123-foot Shiva at Murudeshwar, crossed a mangrove boardwalk in Honnavar, and stared down four waterfalls falling in unison at Jog. This is that trip — where we went, when, and what I'd change if I did it again.
 
 ## Day 1: Pune to Yellapur — the overnight haul
 
@@ -108,7 +108,7 @@ Mirjan Fort is a 16th-century laterite fort built under Queen Chennabhairadevi, 
 ![Raja Gopuram, Murudeshwar](/images/outdoor/coastal-karnataka/raja-gopuram-1.jpg)
 <p style="text-align:center;"><em>Raja Gopuram, Murudeshwar Temple</em></p>
 
-The temple itself is old — local tradition ties Murudeshwar into the same Atmalinga story as Gokarna, with the cloth cover Ganesha peeled off the lingam said to have landed here, which is why the hillock is called Kanduka Giri and the rock formations offshore are known as Ghosts of Ravana. But the two things everyone actually photographs — the 123-foot Shiva statue and the 20-storey Raja Gopuram, tallest in the world at the time it was built — are thoroughly modern. Both were commissioned by the late industrialist R. N. Shetty and built between the late 1990s and mid-2000s, the statue completed around 2008. So the temple is ancient, the skyline is brand new, and somehow the two don't clash at all standing on the beach looking up at it.
+The temple itself is old — local tradition ties Murudeshwar into the same Atmalinga story as Gokarna, with the cloth cover Ganesha peeled off the lingam said to have landed here, which is why the hillock is called Kanduka Giri and the rock formations offshore are known as Ghosts of Ravana. But the two things everyone actually photographs — the 123-foot Shiva statue and the 20-storey Raja Gopuram — said to be the tallest Hindu temple tower (gopura) in the world at the time it was built — are thoroughly modern. Both were commissioned by the late industrialist R. N. Shetty and built between the late 1990s and mid-2000s, the statue completed around 2008. So the temple is ancient, the skyline is brand new, and somehow the two don't clash at all standing on the beach looking up at it.
 
 6. **11:10–11:45 AM** — drove to Honnavar for the mangrove boardwalk.
 7. **Honnavar mangrove boardwalk**, about an hour.
@@ -140,12 +140,12 @@ What you're actually looking at at Jog is the Sharavathi river dropping off a cl
 Three nights compressed into what felt like one long push meant we were often looking at our watches instead of the view. If I planned this again:
 
 - **Two nights instead of one**, spread more comfortably across Gokarna and the coast, instead of the one-night stay we managed this time.
-- **Boating at Honnavar** — we only had time for the boardwalk; the boat rides along the Sharavathi backwaters looked worth the extra hour.
 - **Climb to the top of the Raja Gopuram** at Murudeshwar for the view over the temple complex and the sea — we admired it from ground level only.
+- **Boating at Honnavar** — we only had time for the boardwalk; the boat rides along the Sharavathi backwaters looked worth the extra hour.
 - **Extend the return route** through Kolhapur and Satara: a stop at the **Kopeshwar Temple** in Khidrapur (known for its unique open-roofed *Swarga Mandapam*) and the **12 Motechi Vihir** stepwell near Satara would turn the drive back into sightseeing rather than just distance to cover.
 
 ## Closing
 
-What stays with me from this trip isn't any single stop — it's how little the places had in common, and how close together they all were. Sixty million years of volcanic rock at Yana, a river goddess of pepper traders at Mirjan, a temple whose sanctum is centuries old but whose skyline was built in my own lifetime at Murudeshwar, roots quietly holding an entire coastline together at Honnavar, a waterfall that turns on and off with a dam gate at Jog — all of it inside a sixty-hour loop from Pune and back. You don't usually get geology, mythology, trade history, ecology, and modern engineering on the same itinerary, let alone the same bus.
+What stays with me from this trip isn't any single stop — it's how little the places had in common, and how close together they all were. Ancient limestone spires older than the volcanic hills around them at Yana, a pepper queen's fort at Mirjan, a temple whose sanctum is centuries old but whose skyline was built in my own lifetime at Murudeshwar, roots quietly holding an entire coastline together at Honnavar, a waterfall that turns on and off with a dam gate at Jog — all of it inside a sixty-hour loop from Pune and back. You don't usually get geology, mythology, trade history, ecology, and modern engineering on the same itinerary, let alone the same bus.
 
 We did it in one breathless push, four days end to end, and mostly through bus windows and short stops. It worked, but it also meant every place got less of us than it deserved. There's a version of this trip — two nights instead of one, a boat on the Sharavathi, a climb up the gopuram, maybe a slow drive home through Kolhapur and Satara — where we'd come back having actually spent time somewhere instead of just having seen it. That's the trip I'm already planning next.
