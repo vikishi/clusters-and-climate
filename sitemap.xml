@@ -20,10 +20,10 @@
     <loc>https://clustersandclimate.com/tags/Karnataka/</loc>
     <lastmod>2026-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/life/</loc>
+    <loc>https://clustersandclimate.com/categories/life/</loc>
     <lastmod>2026-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/categories/outdoor/</loc>
+    <loc>https://clustersandclimate.com/life/</loc>
     <lastmod>2026-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Road-Trip/</loc>
@@ -34,9 +34,6 @@
   </url><url>
     <loc>https://clustersandclimate.com/tags/Yana-Caves/</loc>
     <lastmod>2026-09-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clustersandclimate.com/categories/life/</loc>
-    <lastmod>2026-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Life/</loc>
     <lastmod>2026-08-23T00:00:00+00:00</lastmod>
@@ -131,7 +128,7 @@
     <loc>https://clustersandclimate.com/tags/Maharashtra/</loc>
     <lastmod>2026-04-13T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://clustersandclimate.com/categories/Science/</loc>
+    <loc>https://clustersandclimate.com/categories/science/</loc>
     <lastmod>2026-04-13T00:00:00+05:30</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Science/</loc>
@@ -402,6 +399,9 @@
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/tags/Gear/</loc>
+    <lastmod>2018-12-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clustersandclimate.com/categories/outdoor/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clustersandclimate.com/outdoor/</loc>
