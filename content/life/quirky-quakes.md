@@ -9,6 +9,7 @@ categories:
 image: /images/life/epicenter.jpg
 tags:
   - life
+  - feature
 ---
 
 ## Life in Sapporo

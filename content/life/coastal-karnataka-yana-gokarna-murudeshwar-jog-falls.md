@@ -26,10 +26,10 @@ The bus pulled out of Pune at 8:00 PM on the 4th of September, thirty-two of us 
 2. **8:45 AM** — set off for Yana Caves, arriving at **10:15 AM**.
 3. **Yana Caves**, roughly 1 hour 45 minutes on site.
 
-![Yana Caves rock formation](/images/outdoor/coastal-karnataka/yana-caves-1.jpg)
+![Yana Caves rock formation](/images/outdoor/coastal-karnataka/YanaCaves1.jpg)
 <p style="text-align:center;"><em>The black limestone spires of Yana, rising out of the forest canopy</em></p>
 
-![Yana Caves close-up](/images/outdoor/coastal-karnataka/yana-caves-2.jpg)
+![Yana Caves close-up](/images/outdoor/coastal-karnataka/YanaCaves1.jpg)
 <p style="text-align:center;"><em>Sunlight breaking through the cave mouth at Yana</em></p>
 
 ![Yana Caves formations](/images/outdoor/coastal-karnataka/yana-caves-3.jpg)

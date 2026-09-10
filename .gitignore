@@ -25,4 +25,6 @@ _bmad-output/
 .gemini/
 
 # Raw/unprocessed source photos (not the optimized copies in assets/images/)
-/images/
+# NOTE: do not ignore /images/ broadly — deploy.sh copies Hugo's build
+# output (public/images/...) into this same root path for GitHub Pages.
+/images/life/Coastal Karnataka/
