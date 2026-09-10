@@ -23,3 +23,6 @@ _bmad/
 _bmad-output/
 .claude/
 .gemini/
+
+# Raw/unprocessed source photos (not the optimized copies in assets/images/)
+/images/
