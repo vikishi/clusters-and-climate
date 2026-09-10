@@ -2,7 +2,7 @@
 title: "Coastal Karnataka in 60 Hours: Yana Caves, Gokarna, Murudeshwar and Jog Falls"
 date: 2026-09-04
 categories:
-  - outdoor
+  - life
 tags:
   - karnataka
   - road-trip
@@ -23,9 +23,6 @@ The bus pulled out of Pune at 8:00 PM on the 4th of September, thirty-two of us 
 ## Day 2: Yana Caves, Gokarna
 
 1. **7:15 AM** — reached a small restaurant in Yellapur, Shree Krishna Rasoi, for breakfast and a much-needed freshen-up after the night on the road.
-
-Breakfast stop at Shree Krishna Rasoi, Yellapur — first proper meal after the overnight drive.
-
 2. **8:45 AM** — set off for Yana Caves, arriving at **10:15 AM**.
 3. **Yana Caves**, roughly 1 hour 45 minutes on site.
 
